@@ -1,0 +1,360 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title id="page-title">Blog Post | The Fortitude Journal</title>
+<meta name="description" id="page-description" content="Read the latest industry insights from Fortitude Fabrics.">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "surface-container": "#eeeeeb", "on-tertiary": "#ffffff",
+          "surface": "#f9f9f6", "slate-muted": "#5A7080", "pure-white": "#FFFFFF",
+          "background": "#f9f9f6", "on-tertiary-container": "#52acc3",
+          "primary-container": "#063b52", "on-primary": "#ffffff", "primary": "#002435",
+          "outline-variant": "#c1c7cd", "soft-sky": "#B6D7E8", "on-primary-container": "#7ba5c0",
+        },
+        spacing: { "margin-desktop": "80px", "margin-mobile": "20px", "gutter": "24px", "section-gap-desktop": "120px" },
+        fontFamily: { "label-caps": ["Nunito Sans"], "body-main": ["Nunito Sans"], "section-title": ["Nunito Sans"] },
+        fontSize: {
+          "label-caps": ["14px", {"lineHeight":"1","letterSpacing":"0.1em","fontWeight":"700"}],
+          "body-main": ["18px", {"lineHeight":"160%","fontWeight":"400"}],
+          "section-title": ["48px", {"lineHeight":"1.2","fontWeight":"700"}]
+        }
+      }
+    }
+  }
+</script>
+<style>
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+  .prose-content p { margin-bottom: 1.75rem; line-height: 1.9; color: #3a4a56; font-size: 17px; }
+  .prose-content h2 { font-size: 1.6rem; font-weight: 800; color: #002435; margin: 3rem 0 1rem; }
+  .prose-content h3 { font-size: 1.2rem; font-weight: 700; color: #002435; margin: 2rem 0 0.75rem; }
+  .prose-content ul { list-style: disc; padding-left: 1.75rem; margin-bottom: 1.75rem; color: #3a4a56; line-height: 1.9; font-size: 17px; }
+  .prose-content ul li { margin-bottom: 0.5rem; }
+</style>
+</head>
+<body class="bg-background text-primary font-body-main antialiased">
+
+<!-- NAV -->
+<header class="fixed top-0 w-full h-[88px] z-50 bg-pure-white border-b border-outline-variant" id="top-nav">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop w-full max-w-[1440px] mx-auto h-full">
+  <img alt="Fortitude Fabrics Logo" class="h-[86px] w-auto object-contain cursor-pointer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5CHV6KDN4IyJEsMTYOt9dquSQXS9mgFOruf-W_HdZDjzS6Lwh0msqi14yySO_alB0h-f39C-tehN47qisDOyRqFM9oePzjUvdwhBq5DTiB2bU-SN5Z34qg7LW7KJ7OaZ82XCC_UzFnojBNwl7FneRnE41nm0iILvLrDI6ZQlQbMRDsKf1krk95-_mUV9IYmJcsfKvQXBA46A7huQEkt6GQwQC90YERnWKWoHrDCcDqePJ0AGHuUw8Wy2SiX7u4x3twh3AncHuxfQ" onclick="window.location.href='home.html'">
+  <nav class="hidden md:flex items-center gap-8 h-full">
+    <a class="text-[15px] text-primary hover:opacity-70 transition-all" href="home.html">Home</a>
+    <a class="text-[15px] text-primary hover:opacity-70 transition-all" href="product_page.html">Products</a>
+    <a class="text-[15px] text-primary font-bold border-b-2 border-primary pb-1" href="blog.html">Blog</a>
+    <a class="text-[15px] text-primary hover:opacity-70 transition-all" href="about_us.html">About Us</a>
+    <a class="text-[15px] text-primary hover:opacity-70 transition-all" href="contact_us.html">Contact Us</a>
+  </nav>
+  <button onclick="window.location.href='contact_us.html#request-quote'" class="hidden md:block bg-primary text-on-primary px-8 py-3 rounded-full font-label-caps text-label-caps hover:scale-[1.02] transition-all shadow-md">Request a Quote</button>
+  <button id="mobile-menu-btn" class="md:hidden flex flex-col justify-center gap-1.5 p-2 z-[60] relative">
+    <span class="w-6 h-0.5 bg-primary transition-all duration-300 transform origin-center" id="hamburger-line-1"></span>
+    <span class="w-6 h-0.5 bg-primary transition-all duration-300 transform origin-center" id="hamburger-line-2"></span>
+    <span class="w-6 h-0.5 bg-primary transition-all duration-300 transform origin-center" id="hamburger-line-3"></span>
+  </button>
+</div>
+</header>
+
+<main class="pt-[88px]">
+
+  <!-- Top bar: back + newer/older -->
+  <div class="bg-pure-white border-b border-outline-variant sticky top-[88px] z-30">
+    <div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop py-3 flex items-center justify-between">
+      <a href="blog.html" class="flex items-center gap-2 text-slate-muted hover:text-primary transition-colors font-bold text-[13px] group">
+        <span class="material-symbols-outlined text-[18px] group-hover:-translate-x-1 transition-transform">arrow_back</span>
+        Back to Blog
+      </a>
+      <div class="flex items-center gap-4" id="nav-buttons"></div>
+    </div>
+  </div>
+
+  <!-- 404 state -->
+  <div id="not-found" class="hidden max-w-3xl mx-auto px-margin-mobile md:px-margin-desktop py-32 text-center">
+    <span class="material-symbols-outlined text-6xl text-outline-variant mb-6 block">article</span>
+    <h1 class="text-3xl font-extrabold text-primary mb-4">Blog Post Not Found</h1>
+    <p class="text-slate-muted mb-8">This post may have been removed or the link is incorrect.</p>
+    <a href="blog.html" class="inline-block bg-primary text-on-primary px-8 py-3 rounded-full font-label-caps hover:scale-105 transition-transform">Back to All Posts</a>
+  </div>
+
+  <!-- Article -->
+  <article id="article-wrapper" class="hidden">
+
+    <!-- Full-width Cover Image -->
+    <div class="relative w-full h-[280px] md:h-[420px] overflow-hidden bg-surface-container">
+      <img id="post-cover" alt="" class="w-full h-full object-cover">
+      <div class="absolute inset-0 bg-gradient-to-t from-primary/60 via-primary/10 to-transparent"></div>
+      <!-- Category badge over image -->
+      <div class="absolute bottom-6 left-6 md:left-[80px]">
+        <span id="post-category" class="px-4 py-1.5 bg-on-tertiary-container text-primary rounded-full font-bold text-[12px] uppercase tracking-wider mb-4 inline-block"></span>
+      </div>
+    </div>
+
+    <!-- Content area -->
+    <div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop py-12">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+
+        <!-- Main content -->
+        <div class="lg:col-span-8">
+
+          <!-- Meta row -->
+          <div class="flex flex-wrap items-center gap-4 text-slate-muted text-[13px] mb-6">
+            <span id="post-date"></span>
+            <span class="w-1 h-1 bg-outline-variant rounded-full"></span>
+            <span id="post-read-time"></span>
+          </div>
+
+          <!-- Headline -->
+          <h1 id="post-headline" class="text-[28px] md:text-[44px] font-extrabold text-primary mb-8 leading-tight tracking-tight break-words"></h1>
+
+          <!-- Author row with share -->
+          <div class="flex flex-wrap items-center gap-4 pb-8 mb-10 border-b border-outline-variant">
+            <div id="post-initials" class="w-11 h-11 rounded-full bg-primary flex items-center justify-center text-white font-bold text-sm flex-shrink-0"></div>
+            <div>
+              <p id="post-author" class="font-bold text-primary text-[15px]"></p>
+              <p class="text-slate-muted text-[13px]">Fortitude Fabrics · Technical Writer</p>
+            </div>
+            <div class="ml-auto flex items-center gap-3">
+              <a href="https://www.linkedin.com/company/thefortitude-fabrics-pvt-ltd/about/" target="_blank" class="flex items-center gap-2 px-4 py-2 border border-outline-variant rounded-full text-[13px] font-bold text-primary hover:bg-surface-container transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 fill-[#0077b5]" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                Share on LinkedIn
+              </a>
+            </div>
+          </div>
+
+          <!-- Blog content -->
+          <div id="post-content" class="prose-content mb-12"></div>
+
+          <!-- Category tag -->
+          <div class="flex flex-wrap gap-3 items-center pt-8 border-t border-outline-variant mb-12">
+            <span class="font-label-caps text-[11px] text-slate-muted uppercase">Filed Under</span>
+            <span id="post-tag" class="px-4 py-1.5 bg-primary text-on-primary rounded-full font-bold text-[12px] uppercase tracking-wider"></span>
+          </div>
+
+          <!-- CTA Banner -->
+          <div class="p-8 md:p-10 bg-primary rounded-2xl flex flex-col md:flex-row items-center justify-between gap-6">
+            <div>
+              <h3 class="font-extrabold text-xl text-on-primary mb-2">Ready to discuss your fabric requirement?</h3>
+              <p class="text-on-primary/60 text-[15px]">Our technical experts are here to help you find the right solution.</p>
+            </div>
+            <div class="flex gap-3 flex-shrink-0">
+              <button onclick="window.location.href='contact_us.html'" class="px-6 py-3 bg-on-tertiary-container text-primary rounded-full font-bold text-[14px] hover:scale-105 transition-transform shadow-md">Contact Team</button>
+              <button onclick="window.location.href='product_page.html'" class="px-6 py-3 border-2 border-pure-white/30 text-on-primary rounded-full font-bold text-[14px] hover:bg-pure-white/10 transition-colors">Browse Products</button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="lg:col-span-4">
+          <div class="sticky top-[140px] space-y-6">
+
+            <!-- Author Card -->
+            <div class="bg-pure-white border border-outline-variant rounded-2xl p-6">
+              <h4 class="font-label-caps text-[11px] text-slate-muted mb-4 uppercase tracking-wider">Blog Author</h4>
+              <div class="flex items-center gap-3">
+                <div id="sidebar-initials" class="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white font-bold text-base flex-shrink-0"></div>
+                <div>
+                  <p id="sidebar-author" class="font-bold text-primary text-[15px]"></p>
+                  <p class="text-slate-muted text-[13px]">Fortitude Fabrics</p>
+                </div>
+              </div>
+              <a href="contact_us.html" class="mt-4 block text-center py-2 rounded-full border border-primary text-primary text-[13px] font-bold hover:bg-primary hover:text-on-primary transition-colors">Contact Our Sales Team</a>
+            </div>
+
+            <!-- More from Journal -->
+            <div class="bg-pure-white border border-outline-variant rounded-2xl p-6">
+              <h4 class="font-label-caps text-[11px] text-slate-muted mb-4 uppercase tracking-wider">More from the Journal</h4>
+              <div id="related-posts" class="space-y-4"></div>
+            </div>
+
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </article>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-primary py-section-gap-desktop border-t border-primary-container">
+<div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="flex flex-col lg:flex-row justify-between gap-12 lg:gap-20 mb-16">
+<!-- Brand Column -->
+<div class="space-y-6 lg:w-2/5">
+<a href="home.html" style="cursor:pointer;display:inline-block"><span class="font-section-title text-4xl font-extrabold text-on-primary tracking-tight">Fortitude Fabrics</span></a>
+<p class="font-body-small text-on-primary/70 leading-relaxed">Precision-engineered technical textiles for India's high-growth industrial sectors. Manufactured in Telangana, serving the world.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center hover:bg-on-tertiary-container transition-colors" href="#"><span class="material-symbols-outlined text-on-primary">hub</span></a>
+<a class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center hover:bg-on-tertiary-container transition-colors" href="#"><span class="material-symbols-outlined text-on-primary">group</span></a>
+</div>
+</div>
+<!-- Resources -->
+<div class="flex flex-col gap-4 lg:w-1/5">
+<h4 class="font-label-caps text-on-tertiary-container mb-4">RESOURCES</h4>
+<a class="font-body-small text-on-primary opacity-70 hover:opacity-100 hover:translate-x-1 transition-all" href="home.html">Home</a>
+<a class="font-body-small text-on-primary opacity-70 hover:opacity-100 hover:translate-x-1 transition-all" href="product_page.html">Products</a>
+<a class="font-body-small text-on-primary opacity-70 hover:opacity-100 hover:translate-x-1 transition-all" href="about_us.html">About Us</a>
+<a class="font-body-small text-on-primary opacity-70 hover:opacity-100 hover:translate-x-1 transition-all" href="contact_us.html">Contact Us</a>
+<a class="font-body-small text-on-primary opacity-70 hover:opacity-100 hover:translate-x-1 transition-all" href="blog.html">Blog Posts</a>
+</div>
+
+<!-- Contact -->
+<div class="flex flex-col gap-4 lg:w-2/5">
+<h4 class="font-label-caps text-on-tertiary-container mb-4">CONTACT</h4>
+<div class="space-y-4">
+<div class="flex items-start gap-2"><span class="material-symbols-outlined text-on-primary/70 text-sm mt-1">call</span><div><a href="tel:+919490255858" class="font-body-small text-on-primary opacity-70 hover:opacity-100 transition-opacity block">+91 94902 55858</a><p class="text-[12px] text-on-primary/50">Mon–Fri: 8:00 AM – 8:00 PM | Sat: 9:00 AM – 7:00 PM</p></div></div>
+<div class="flex items-start gap-2"><span class="material-symbols-outlined text-on-primary/70 text-sm mt-1">mail</span><div><a href="mailto:business@fortitudefabric.com" class="font-body-small text-on-primary opacity-70 hover:opacity-100 transition-opacity">business@fortitudefabric.com</a></div></div>
+<div class="flex items-start gap-2"><span class="material-symbols-outlined text-on-primary/70 text-sm mt-1">location_on</span><div><p class="font-body-small text-on-primary opacity-70">Wyra, Khammam, Telangana, India</p></div></div>
+<div class="flex items-start gap-2"><span class="material-symbols-outlined text-on-primary/70 text-sm mt-1">language</span><a href="https://www.fortitudefabric.com" target="_blank" rel="noopener noreferrer" class="font-body-small text-on-primary opacity-70 hover:opacity-100 transition-opacity">www.fortitudefabric.com</a></div>
+</div>
+</div>
+</div>
+<div class="pt-8 border-t border-primary-container flex flex-col md:flex-row justify-between items-center gap-6">
+<p class="text-on-primary/50 text-[14px]">© 2024 Fortitude Fabrics. All rights reserved. Precision Manufacturing.</p>
+
+</div>
+</div>
+</footer>
+
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="fixed inset-0 bg-pure-white z-40 transform translate-x-full transition-transform duration-300 pt-[88px] px-margin-mobile overflow-y-auto pb-10">
+  <nav class="flex flex-col gap-6 pt-10">
+    <a href="home.html" class="font-bold text-2xl text-primary border-b border-outline-variant/30 pb-4">Home</a>
+    <a href="product_page.html" class="font-bold text-2xl text-primary border-b border-outline-variant/30 pb-4">Products</a>
+    <a href="blog.html" class="font-bold text-2xl text-primary border-b border-outline-variant/30 pb-4">Blog</a>
+    <a href="about_us.html" class="font-bold text-2xl text-primary border-b border-outline-variant/30 pb-4">About Us</a>
+    <a href="contact_us.html" class="font-bold text-2xl text-primary border-b border-outline-variant/30 pb-4">Contact Us</a>
+    <button onclick="window.location.href='contact_us.html#request-quote'" class="mt-8 bg-primary text-on-primary px-8 py-4 rounded-full font-label-caps shadow-md w-full">Request a Quote</button>
+  </nav>
+</div>
+
+<script type="module">\n        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";\n        import { getFirestore, doc, getDoc, collection, getDocs, query, orderBy } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+\n        const app = initializeApp({\n          apiKey: "AIzaSyA5OU2JZdmTpjDXJILxPQ-Ypuum0Wkhk3M",\n          authDomain: "fortitude-b0a25.firebaseapp.com",\n          projectId: "fortitude-b0a25",\n          storageBucket: "fortitude-b0a25.firebasestorage.app",\n          messagingSenderId: "506151176055",\n          appId: "1:506151176055:web:81a95ce6f7094f4bb8c372"\n        });\n        const db = getFirestore(app);
+
+document.addEventListener("DOMContentLoaded", async () => {
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get('id');
+  
+  if (!id) {
+    document.getElementById('not-found').classList.remove('hidden');
+    return;
+  }
+
+  // Fetch specific post
+  let blog = null;
+  try {
+      const docRef = doc(db, "blogs", id);
+      const docSnap = await getDoc(docRef);
+      if (docSnap.exists()) {
+          blog = { id: docSnap.id, ...docSnap.data() };
+      }
+  } catch (err) {
+      console.error("Error fetching blog:", err);
+  }
+
+  if (!blog) {
+    document.getElementById('not-found').classList.remove('hidden');
+    return;
+  }
+
+  document.getElementById('article-wrapper').classList.remove('hidden');
+  document.getElementById('page-title').textContent = blog.headline + ' | The Fortitude Journal';
+  document.getElementById('page-description').content = blog.content.substring(0, 160);
+
+  // Populate
+  document.getElementById('post-cover').src = blog.imageUrl;
+  document.getElementById('post-cover').alt = blog.headline;
+  document.getElementById('post-category').textContent = blog.category;
+  document.getElementById('post-date').textContent = blog.date;
+  document.getElementById('post-read-time').textContent = blog.readTime + ' Min Read';
+  document.getElementById('post-headline').textContent = blog.headline;
+  document.getElementById('post-initials').textContent = blog.initials;
+  document.getElementById('post-author').textContent = blog.authorName;
+  document.getElementById('post-tag').textContent = blog.category;
+  document.getElementById('sidebar-initials').textContent = blog.initials;
+  document.getElementById('sidebar-author').textContent = blog.authorName;
+
+  // Render content paragraphs
+  const contentEl = document.getElementById('post-content');
+  const paragraphs = blog.content.split(/\n\n+/).filter(p => p.trim());
+  if (paragraphs.length > 1) {
+    contentEl.innerHTML = paragraphs.map(p => `<p>${p.replace(/\n/g,'<br>')}</p>`).join('');
+  } else {
+    const sentences = blog.content.match(/[^.!?]+[.!?]+/g) || [blog.content];
+    const chunks = [];
+    for (let i = 0; i < sentences.length; i += 3) {
+      chunks.push(sentences.slice(i, i+3).join(' '));
+    }
+    contentEl.innerHTML = chunks.map(c => `<p>${c.trim()}</p>`).join('');
+  }
+
+  // Fetch all blogs for newer/older and related posts
+  let blogs = [];
+  try {
+      const q = query(collection(db, "blogs"), orderBy("createdAt", "desc"));
+      const querySnapshot = await getDocs(q);
+      querySnapshot.forEach((doc) => {
+          blogs.push({ id: doc.id, ...doc.data() });
+      });
+  } catch (err) {
+      console.error("Error fetching related blogs:", err);
+  }
+
+  const blogIndex = blogs.findIndex(b => b.id === id);
+
+  // Newer / Older nav
+  const navButtons = document.getElementById('nav-buttons');
+  if (blogIndex > 0) {
+    const newer = blogs[blogIndex - 1];
+    navButtons.innerHTML += `<a href="blog_post.html?id=${newer.id}" class="flex items-center gap-1 text-[13px] font-bold text-primary hover:text-primary-container transition-colors"><span class="material-symbols-outlined text-[18px]">chevron_left</span><span class="hidden sm:inline">Newer Article</span></a>`;
+  }
+  if (blogIndex < blogs.length - 1 && blogIndex !== -1) {
+    const older = blogs[blogIndex + 1];
+    navButtons.innerHTML += `<a href="blog_post.html?id=${older.id}" class="flex items-center gap-1 text-[13px] font-bold text-primary hover:text-primary-container transition-colors"><span class="hidden sm:inline">Older Article</span><span class="material-symbols-outlined text-[18px]">chevron_right</span></a>`;
+  }
+
+  const relatedContainer = document.getElementById('related-posts');
+  const related = blogs.filter(b => b.id !== id).slice(0, 3);
+  if (related.length === 0) {
+    relatedContainer.innerHTML = '<p class="text-slate-muted text-sm">No other posts yet.</p>';
+  } else {
+    related.forEach(r => {
+      relatedContainer.innerHTML += `
+        <a href="blog_post.html?id=${r.id}" class="flex gap-3 group items-start">
+          <div class="w-16 h-16 flex-shrink-0 rounded-xl overflow-hidden bg-surface-container">
+            <img src="${r.imageUrl}" alt="${r.headline.replace(/"/g, '&quot;')}" class="w-full h-full object-cover"
+              onerror="this.parentElement.innerHTML='<div class=\'w-full h-full bg-primary/10 flex items-center justify-center text-primary font-bold text-lg\'>${(r.initials||'F')}</div>'">
+          </div>
+          <div class="min-w-0 flex-1">
+            <p class="text-[13px] font-bold text-primary group-hover:text-primary-container transition-colors line-clamp-2 break-words leading-snug">${r.headline}</p>
+            <p class="text-[12px] text-slate-muted mt-1">${r.date}</p>
+          </div>
+        </a>`;
+    });
+  }
+
+  // Mobile Menu
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  const l1 = document.getElementById('hamburger-line-1');
+  const l2 = document.getElementById('hamburger-line-2');
+  const l3 = document.getElementById('hamburger-line-3');
+  if (btn && menu) {
+    btn.addEventListener('click', () => {
+      const open = !menu.classList.contains('translate-x-full');
+      menu.classList.toggle('translate-x-full', open);
+      l1.classList.toggle('rotate-45', !open); l1.classList.toggle('translate-y-2', !open);
+      l2.classList.toggle('opacity-0', !open);
+      l3.classList.toggle('-rotate-45', !open); l3.classList.toggle('-translate-y-2', !open);
+      document.body.style.overflow = open ? '' : 'hidden';
+    });
+  }
+});
+</script>
+</body></html>
