@@ -1,0 +1,471 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Fortitude Fabrics - Woven Gloves</title>
+<meta content="High-density woven gloves for industrial and regulated environments, balancing dexterity and protection." name="description">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+                  "tertiary-fixed": "#adecff",
+                  "tertiary-container": "#003d49",
+                  "on-secondary-container": "#57676b",
+                  "on-secondary": "#ffffff",
+                  "on-surface": "#1a1c1b",
+                  "surface": "#f9f9f6",
+                  "surface-container-lowest": "#ffffff",
+                  "inverse-on-surface": "#f1f1ee",
+                  "secondary": "#516165",
+                  "on-error-container": "#93000a",
+                  "on-tertiary-fixed": "#001f26",
+                  "surface-container": "#eeeeeb",
+                  "primary-container": "#063b52",
+                  "outline-variant": "#c1c7cd",
+                  "primary": "#002435",
+                  "on-tertiary": "#ffffff",
+                  "slate-muted": "#5A7080",
+                  "on-primary-fixed": "#001e2d",
+                  "background": "#f9f9f6",
+                  "pure-white": "#FFFFFF",
+                  "on-secondary-fixed-variant": "#3a494d",
+                  "secondary-container": "#d4e5ea",
+                  "on-background": "#1a1c1b",
+                  "error": "#ba1a1a",
+                  "surface-container-low": "#f4f4f1",
+                  "soft-sky": "#B6D7E8",
+                  "primary-fixed": "#c5e7ff",
+                  "surface-container-highest": "#e2e3e0",
+                  "error-container": "#ffdad6",
+                  "inverse-surface": "#2f312f",
+                  "surface-bright": "#f9f9f6",
+                  "on-error": "#ffffff",
+                  "on-secondary-fixed": "#0e1e22",
+                  "outline": "#72787d",
+                  "surface-tint": "#38637c",
+                  "primary-fixed-dim": "#a1cce8",
+                  "on-primary-fixed-variant": "#1e4b63",
+                  "on-primary": "#ffffff",
+                  "surface-variant": "#e2e3e0",
+                  "surface-alt": "#EFEFEF",
+                  "inverse-primary": "#a1cce8",
+                  "tertiary-fixed-dim": "#7bd3ea",
+                  "surface-dim": "#dadad7",
+                  "on-tertiary-fixed-variant": "#004e5d",
+                  "secondary-fixed": "#d4e5ea",
+                  "on-surface-variant": "#41484c",
+                  "tertiary": "#00262e",
+                  "on-primary-container": "#7ba5c0",
+                  "secondary-fixed-dim": "#b9c9ce",
+                  "on-tertiary-container": "#52acc3",
+                  "surface-container-high": "#e8e8e5"
+          },
+          "borderRadius": {
+                  "DEFAULT": "0.25rem",
+                  "lg": "0.5rem",
+                  "xl": "0.75rem",
+                  "full": "9999px"
+          },
+          "spacing": {
+                  "margin-desktop": "80px",
+                  "section-gap-desktop": "120px",
+                  "section-gap-mobile": "64px",
+                  "base": "8px",
+                  "margin-mobile": "20px",
+                  "gutter": "24px"
+          },
+          "fontFamily": {
+                  "section-title": ["Nunito Sans"],
+                  "hero-lg": ["Nunito Sans"],
+                  "label-caps": ["Nunito Sans"],
+                  "card-title": ["Nunito Sans"],
+                  "body-main": ["Nunito Sans"],
+                  "hero-lg-mobile": ["Nunito Sans"],
+                  "section-title-mobile": ["Nunito Sans"],
+                  "body-small": ["Nunito Sans"]
+          },
+          "fontSize": {
+                  "section-title": ["48px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                  "hero-lg": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                  "label-caps": ["14px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                  "card-title": ["24px", {"lineHeight": "1.4", "fontWeight": "700"}],
+                  "body-main": ["18px", {"lineHeight": "160%", "fontWeight": "400"}],
+                  "hero-lg-mobile": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "800"}],
+                  "section-title-mobile": ["32px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                  "body-small": ["16px", {"lineHeight": "150%", "fontWeight": "400"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    
+    .glass-card {
+      backdrop-filter: blur(12px);
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+    .group-scroll .bg-pure-white {
+      background-color: #FFFFFF !important;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface font-body-main selection:bg-primary-container selection:text-on-primary-container">
+<header class="fixed top-0 w-full h-[88px] z-50 transition-all duration-300 bg-pure-white border-b border-outline-variant" id="top-nav">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop w-full max-w-[1440px] mx-auto h-full">
+<div class="font-section-title text-[28px] font-extrabold text-primary tracking-tight">
+<img alt="Fortitude Fabrics Logo" class="h-[86px] w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIx6Lqzh1DtqWkUuyqgtDrcOcLuN8SVvq5FvgfxwnyLE544ar4Ot6GWM7mzonvRuA2__pBooqXwkgmKKjMuK_FMYzC7WsQKwVrySwF1pGM02LTMNsww2c4sQKPqyrbYUVxpfCVF9Npf6xjXumaAh7wGuEMnfCMmY7QrMGM5YVNqXNwKUycNnQQFFfvfPYY3Ogg6IE3oGzTiNfkiqLbgCvCByogqUXHmQ1Gl3eIgZyIIoi3NwJ0WFqJcw29oxfYf1oP9xfs6DPtiX4" style="cursor:pointer" onclick="window.location.href='home.html'">
+</div>
+<nav class="hidden md:flex items-center gap-8 h-full">
+<a class="font-body-small text-body-small text-primary hover:opacity-100 hover:scale-[1.02] transition-all" href="home.html">Home</a>
+<div class="h-full flex items-center relative group/products">
+<a class="font-body-small text-body-small text-primary opacity-80 flex items-center gap-1 hover:opacity-100 transition-all border-b-2 border-primary pb-1" href="product_page.html" id="products-btn">
+                    Products <span class="material-symbols-outlined text-sm">expand_more</span>
+</a>
+<!-- Mega Menu -->
+<div class="mega-menu absolute top-[88px] left-0 w-[600px] bg-pure-white p-8 rounded-xl shadow-2xl grid grid-cols-1 md:grid-cols-2 gap-8 z-50 opacity-0 invisible pointer-events-none group-hover/products:opacity-100 group-hover/products:visible group-hover/products:pointer-events-auto transition-all duration-200" id="products-menu">
+<div>
+<h4 class="font-label-caps text-label-caps text-on-primary-container mb-4">FABRIC TYPES</h4>
+<ul class="space-y-3">
+<li class=""><a class="text-body-small hover:text-on-tertiary-container transition-colors" href="product_page.html#section-woven">Woven Technical Textiles</a></li>
+<li class=""><a class="text-body-small hover:text-on-tertiary-container transition-colors" href="product_page.html#section-non-woven">Non-Woven Filtration</a></li>
+<li class=""><a class="text-body-small hover:text-on-tertiary-container transition-colors" href="product_page.html#section-woven">Antistatic Materials</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-on-primary-container mb-4">PRODUCTS</h4>
+<ul class="space-y-3">
+<li class=""><a class="text-body-small hover:text-on-tertiary-container transition-colors" href="product_page.html#section-lint-free">Lint-Free Rolls</a></li>
+<li class=""><a class="text-body-small hover:text-on-tertiary-container transition-colors" href="product_page.html#section-uniforms">Cleanroom Uniforms</a></li>
+<li class=""><a class="text-body-small hover:text-on-tertiary-container transition-colors" href="product_page.html#section-woven">Industrial Coveralls</a></li>
+</ul>
+</div>
+</div>
+</div>
+<a class="font-body-small text-body-small text-primary opacity-80 hover:opacity-100 hover:scale-[1.02] transition-all" href="blog.html">Blog</a>
+<a class="font-body-small text-body-small text-primary opacity-80 hover:opacity-100 hover:scale-[1.02] transition-all" href="about_us.html">About Us</a>
+<a class="font-body-small text-body-small text-primary opacity-80 hover:opacity-100 hover:scale-[1.02] transition-all" href="contact_us.html">Contact Us</a>
+</nav>
+<button onclick="window.location.href='contact_us.html#request-quote'" class="hidden md:block bg-primary text-on-primary px-8 py-3 rounded-full font-label-caps text-label-caps hover:scale-[1.02] active:scale-[0.98] transition-all shadow-md">
+            Request a Quote
+        </button>
+
+<!-- Mobile Menu Toggle Button -->
+<button id="mobile-menu-btn" class="md:hidden flex flex-col justify-center gap-1.5 p-2 z-[60] relative">
+    <span class="w-6 h-0.5 bg-primary transition-all duration-300 transform origin-center" id="hamburger-line-1"></span>
+    <span class="w-6 h-0.5 bg-primary transition-all duration-300 transform origin-center" id="hamburger-line-2"></span>
+    <span class="w-6 h-0.5 bg-primary transition-all duration-300 transform origin-center" id="hamburger-line-3"></span>
+</button>
+
+</div>
+</header>
+<main class="pt-[120px] md:pt-[160px]">
+<!-- Breadcrumbs -->
+<nav class="px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto mb-8">
+<div class="flex items-center gap-2 text-slate-muted font-body-small">
+<a class="hover:text-primary transition-colors" href="home.html">Home</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="product_page.html">Products</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">Woven Garments</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="text-primary font-bold">Woven Gloves</span>
+</div>
+</nav>
+<!-- Product Hero Section - Mirrored from SCREEN_72 -->
+<section class="px-margin-mobile md:px-margin-desktop py-12 max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-start mb-12">
+<!-- Left: Product Image -->
+<div class="relative group">
+<div class="absolute top-6 left-6 z-20 flex flex-col gap-2">
+<span class="bg-primary text-white px-4 py-1.5 rounded-full font-label-caps text-[10px] tracking-wider shadow-lg">ISO Grade</span>
+<span class="bg-white/90 backdrop-blur-md text-primary px-4 py-1.5 rounded-full font-label-caps text-[10px] tracking-wider shadow-lg">High Dexterity</span>
+<span class="bg-white/90 backdrop-blur-md text-primary px-4 py-1.5 rounded-full font-label-caps text-[10px] tracking-wider shadow-lg">Reusable</span>
+</div>
+<div class="bg-surface-container rounded-3xl overflow-hidden aspect-square flex items-center justify-center border border-outline-variant/30">
+<img alt="Woven Gloves" class="w-full h-full transition-transform duration-700 group-hover:scale-105 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFyAB0_-3f4RAq4BtR1k-XjkZil_qW0UtEdB8oYZvk4dN4mAxMakQ6sqUICfPljt8GwNcVc3dIRV0e0D7h32La8bJcFDjbbWFU4nhM81SLl0bJiZ-7TJL-q82GK4jbuq2ymuPDeMLoHTPa64uTQOGjm17XbYHmUAdA86Af0ORrwAJwRGEyKj7rYkVemleVTT2-Uwy_KSCcKSakjQLcSZsvm0n30XEjgcC8ahco_cMRcYGj13dYMAkRvNnkPqrZoeBtFgYT3zzcsxU">
+</div>
+</div>
+<!-- Right: Product Info -->
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-primary-container mb-2">WOVEN GARMENTS</span>
+<h1 class="font-section-title text-section-title text-primary mb-4 leading-tight">Woven Gloves</h1>
+<div class="h-[1px] bg-outline-variant w-24 mb-8"></div>
+<p class="font-body-main text-slate-muted mb-10 leading-relaxed max-w-xl">
+                    Fortitude Fabrics' Woven Gloves are precision-engineered for industrial and regulated environments where hand protection must not come at the cost of dexterity. Constructed from high-density woven textile with an ergonomic fit, they deliver reliable protection against abrasion, particulate contamination, and minor chemical exposure — while preserving the tactile sensitivity required for precision assembly, handling, and inspection tasks.
+                </p>
+<!-- Quick Specs Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter mb-12">
+<div class="p-6 bg-surface-container-low rounded-xl border border-outline-variant/30">
+<p class="text-label-caps text-[12px] text-on-surface-variant mb-1 uppercase">Material</p>
+<p class="font-card-title text-[18px] text-primary">High-Density Woven Textile</p>
+</div>
+<div class="p-6 bg-surface-container-low rounded-xl border border-outline-variant/30">
+<p class="text-label-caps text-[12px] text-on-surface-variant mb-1 uppercase">Sizes</p>
+<p class="font-card-title text-[18px] text-primary">S / M / L / XL</p>
+</div>
+<div class="p-6 bg-surface-container-low rounded-xl border border-outline-variant/30">
+<p class="text-label-caps text-[12px] text-on-surface-variant mb-1 uppercase">Use Type</p>
+<p class="font-card-title text-[18px] text-primary">Reusable</p>
+</div>
+<div class="p-6 bg-surface-container-low rounded-xl border border-outline-variant/30">
+<p class="text-label-caps text-[12px] text-on-surface-variant mb-1 uppercase">Compliance</p>
+<p class="font-card-title text-[18px] text-primary">ISO Grade</p>
+</div>
+</div>
+<div class="flex flex-wrap gap-4">
+<button onclick="window.location.href='contact_us.html#request-quote'" class="bg-primary text-on-primary font-bold px-10 py-5 rounded-full hover:scale-[1.02] transition-all shadow-lg active:scale-[0.98] flex items-center gap-2">
+<span class="material-symbols-outlined">mail</span>
+                        Inquire for Bulk Order
+                    </button>
+
+</div>
+</div>
+</section>
+<!-- Product Details Tabs Section - Mirrored from SCREEN_72 style -->
+<section class="bg-surface-container-low py-section-gap-desktop">
+<div class="px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto">
+<div class="flex gap-12 border-b border-outline-variant mb-12 overflow-x-auto no-scrollbar">
+<button class="font-label-caps pb-4 border-b-2 border-primary text-primary transition-all whitespace-nowrap" id="tab-btn-description" onclick="switchTab(event, 'tab-description')">DESCRIPTION</button>
+<button class="font-label-caps pb-4 border-b-2 border-transparent text-slate-muted hover:text-primary transition-all whitespace-nowrap" id="tab-btn-features" onclick="switchTab(event, 'tab-features')">KEY FEATURES</button>
+<button class="font-label-caps pb-4 border-b-2 border-transparent text-slate-muted hover:text-primary transition-all whitespace-nowrap" id="tab-btn-applications" onclick="switchTab(event, 'tab-applications')">APPLICATION AREAS</button>
+</div>
+<!-- Tab Content: Description -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12" id="tab-description" class="tab-panel"><div class="lg:col-span-7">
+<h3 class="font-card-title text-primary mb-6">Dexterity and Protection in Equal Measure</h3>
+<p class="font-body-main text-slate-muted mb-6">
+            The Fortitude Fabrics Woven Gloves are constructed from a high-density textile weave that balances structural integrity with fingertip sensitivity — a combination that is difficult to achieve with thicker rubber or nitrile alternatives. The ergonomic cut follows the natural curvature of the hand, reducing fatigue during repetitive precision tasks such as component placement, quality inspection, and laboratory sample handling.
+          </p>
+<p class="font-body-main text-slate-muted">
+            Each pair is finished to tight dimensional tolerances with reinforced stitching at the thumb crotch and fingertip zones — the highest wear points in industrial glove use. Available in bulk quantities with custom sizing options and colour variants for department-level workforce identification.
+          </p>
+</div>
+<div class="lg:col-span-5">
+<div class="bg-pure-white p-8 rounded-2xl border border-outline-variant/30 shadow-sm">
+<h4 class="font-label-caps text-primary mb-6 uppercase tracking-wider">Manufacturing Details</h4>
+<div class="flex flex-col gap-6">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary">location_on</span>
+<div>
+<p class="font-bold text-primary mb-1">Primary Facility</p>
+<p class="text-body-small text-slate-muted">Wyra, Khammam, Telangana, India</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary">verified</span>
+<div>
+<p class="font-bold text-primary mb-1">Quality Standards</p>
+<p class="text-body-small text-slate-muted">ISO Grade Compliance, High-Density Textile Weave Certification</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary">inventory_2</span>
+<div>
+<p class="font-bold text-primary mb-1">Capacity</p>
+<p class="text-body-small text-slate-muted">Bulk Industrial Supply &amp; Custom Departmental Variants</p>
+</div>
+</div>
+</div>
+</div>
+</div></div>
+<!-- Tab Content: Features -->
+<div class="hidden grid grid-cols-1 md:grid-cols-3 gap-8" id="tab-features" class="tab-panel hidden">
+<div class="p-8 bg-pure-white rounded-2xl shadow-sm border border-outline-variant/30 flex flex-col items-start hover:shadow-md transition-all">
+<div class="w-16 h-16 bg-primary-container/10 rounded-full flex items-center justify-center text-primary mb-6">
+<span class="material-symbols-outlined text-3xl">pan_tool</span>
+</div>
+<h4 class="font-card-title text-primary mb-4">High Dexterity</h4>
+<p class="font-body-small text-slate-muted">Ergonomic woven construction preserves fingertip sensitivity for precision assembly, inspection, and handling tasks.</p>
+</div>
+<div class="p-8 bg-pure-white rounded-2xl shadow-sm border border-outline-variant/30 flex flex-col items-start hover:shadow-md transition-all">
+<div class="w-16 h-16 bg-primary-container/10 rounded-full flex items-center justify-center text-primary mb-6">
+<span class="material-symbols-outlined text-3xl">shield</span>
+</div>
+<h4 class="font-card-title text-primary mb-4">Abrasion Resistant</h4>
+<p class="font-body-small text-slate-muted">High-density weave resists surface abrasion and particulate contamination across sustained industrial use.</p>
+</div>
+<div class="p-8 bg-pure-white rounded-2xl shadow-sm border border-outline-variant/30 flex flex-col items-start hover:shadow-md transition-all">
+<div class="w-16 h-16 bg-primary-container/10 rounded-full flex items-center justify-center text-primary mb-6">
+<span class="material-symbols-outlined text-3xl">autorenew</span>
+</div>
+<h4 class="font-card-title text-primary mb-4">Wash &amp; Reuse</h4>
+<p class="font-body-small text-slate-muted">Retains fit, protection, and structural integrity through repeated industrial laundering and sterilisation cycles.</p>
+</div>
+</div>
+<!-- Tab Content: Applications -->
+<div class="hidden" id="tab-applications" class="tab-panel hidden">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="glass-card p-10 rounded-2xl flex flex-col items-center justify-center text-center gap-6 group hover:bg-primary transition-all duration-300">
+<span class="material-symbols-outlined text-5xl text-primary group-hover:text-on-primary transition-colors">memory</span>
+<p class="font-card-title text-primary group-hover:text-on-primary transition-colors">Electronics &amp; Semiconductor</p>
+</div>
+<div class="glass-card p-10 rounded-2xl flex flex-col items-center justify-center text-center gap-6 group hover:bg-primary transition-all duration-300">
+<span class="material-symbols-outlined text-5xl text-primary group-hover:text-on-primary transition-colors">medical_services</span>
+<p class="font-card-title text-primary group-hover:text-on-primary transition-colors">Pharmaceutical &amp; Lab</p>
+</div>
+<div class="glass-card p-10 rounded-2xl flex flex-col items-center justify-center text-center gap-6 group hover:bg-primary transition-all duration-300">
+<span class="material-symbols-outlined text-5xl text-primary group-hover:text-on-primary transition-colors">precision_manufacturing</span>
+<p class="font-card-title text-primary group-hover:text-on-primary transition-colors">Precision Manufacturing</p>
+</div>
+<div class="glass-card p-10 rounded-2xl flex flex-col items-center justify-center text-center gap-6 group hover:bg-primary transition-all duration-300">
+<span class="material-symbols-outlined text-5xl text-primary group-hover:text-on-primary transition-colors">restaurant</span>
+<p class="font-card-title text-primary group-hover:text-on-primary transition-colors">Food Processing</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Related Products Section -->
+
+<!-- Final CTA Banner -->
+<section class="px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto mb-section-gap-desktop">
+<div class="bg-primary rounded-[2rem] p-12 md:p-20 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-12 shadow-2xl">
+<!-- Visual Backdrop Pattern -->
+<div class="absolute inset-0 opacity-10 pointer-events-none">
+<div class="absolute inset-0" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 40px 40px;"></div>
+</div>
+<div class="relative z-10 max-w-2xl">
+<h2 class="font-section-title text-section-title-mobile md:text-section-title text-on-primary mb-6">Need Custom Sizes, Colours, or Bulk Quantities?</h2>
+<p class="font-body-main text-on-primary opacity-80 mb-0">
+          We manufacture woven gloves in bulk for pharmaceutical, electronics, and industrial clients across India and internationally. Custom sizing, colour variants, and logo branding available. Share your requirements for a same-day quote.
+        </p>
+</div>
+<div class="relative z-10">
+<button onclick="window.location.href='contact_us.html'" class="bg-pure-white text-primary px-10 py-5 rounded-full font-label-caps text-lg hover:scale-[1.05] active:scale-[0.95] transition-all shadow-xl">
+          Contact Our Team
+        </button>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-primary py-section-gap-desktop border-t border-primary-container">
+<div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="flex flex-col lg:flex-row justify-between gap-12 lg:gap-20 mb-16">
+<!-- Brand Column -->
+<div class="space-y-6 lg:w-2/5">
+<a href="home.html" style="cursor:pointer;display:inline-block"><span class="font-section-title text-4xl font-extrabold text-on-primary tracking-tight">Fortitude Fabrics</span></a>
+<p class="font-body-small text-on-primary/70 leading-relaxed">Precision-engineered technical textiles for India's high-growth industrial sectors. Manufactured in Telangana, serving the world.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center hover:bg-on-tertiary-container transition-colors" href="#"><span class="material-symbols-outlined text-on-primary">hub</span></a>
+<a class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center hover:bg-on-tertiary-container transition-colors" href="#"><span class="material-symbols-outlined text-on-primary">group</span></a>
+</div>
+</div>
+<!-- Resources -->
+<div class="flex flex-col gap-4 lg:w-1/5">
+<h4 class="font-label-caps text-on-tertiary-container mb-4">RESOURCES</h4>
+<a class="font-body-small text-on-primary opacity-70 hover:opacity-100 hover:translate-x-1 transition-all" href="home.html">Home</a>
+<a class="font-body-small text-on-primary opacity-70 hover:opacity-100 hover:translate-x-1 transition-all" href="product_page.html">Products</a>
+<a class="font-body-small text-on-primary opacity-70 hover:opacity-100 hover:translate-x-1 transition-all" href="about_us.html">About Us</a>
+<a class="font-body-small text-on-primary opacity-70 hover:opacity-100 hover:translate-x-1 transition-all" href="contact_us.html">Contact Us</a>
+<a class="font-body-small text-on-primary opacity-70 hover:opacity-100 hover:translate-x-1 transition-all" href="blog.html">Blog Posts</a>
+</div>
+
+<!-- Contact -->
+<div class="flex flex-col gap-4 lg:w-2/5">
+<h4 class="font-label-caps text-on-tertiary-container mb-4">CONTACT</h4>
+<div class="space-y-4">
+<div class="flex items-start gap-2"><span class="material-symbols-outlined text-on-primary/70 text-sm mt-1">call</span><div><a href="tel:+919490255858" class="font-body-small text-on-primary opacity-70 hover:opacity-100 transition-opacity block">+91 94902 55858</a><p class="text-[12px] text-on-primary/50">Mon–Fri: 8:00 AM – 8:00 PM | Sat: 9:00 AM – 7:00 PM</p></div></div>
+<div class="flex items-start gap-2"><span class="material-symbols-outlined text-on-primary/70 text-sm mt-1">mail</span><div><a href="mailto:business@fortitudefabric.com" class="font-body-small text-on-primary opacity-70 hover:opacity-100 transition-opacity">business@fortitudefabric.com</a></div></div>
+<div class="flex items-start gap-2"><span class="material-symbols-outlined text-on-primary/70 text-sm mt-1">location_on</span><div><p class="font-body-small text-on-primary opacity-70">Wyra, Khammam, Telangana, India</p></div></div>
+<div class="flex items-start gap-2"><span class="material-symbols-outlined text-on-primary/70 text-sm mt-1">language</span><a href="https://www.fortitudefabric.com" target="_blank" rel="noopener noreferrer" class="font-body-small text-on-primary opacity-70 hover:opacity-100 transition-opacity">www.fortitudefabric.com</a></div>
+</div>
+</div>
+</div>
+<div class="pt-8 border-t border-primary-container flex flex-col md:flex-row justify-between items-center gap-6">
+<p class="text-on-primary/50 text-[14px]">© 2024 Fortitude Fabrics. All rights reserved. Precision Manufacturing.</p>
+
+</div>
+</div>
+</footer>
+<script>
+  function switchTab(tabId) {
+    const tabs = ['description', 'features', 'applications'];
+    tabs.forEach(t => {
+      const content = document.getElementById(`tab-content-${t}`);
+      const button = document.getElementById(`tab-btn-${t}`);
+      if (t === tabId) {
+        content.classList.remove('hidden');
+        if (t === 'features') {
+          content.classList.add('grid');
+        } else {
+          content.classList.remove('grid');
+        }
+        button.classList.add('border-primary', 'text-primary');
+        button.classList.remove('border-transparent', 'text-slate-muted');
+      } else {
+        content.classList.add('hidden');
+        content.classList.remove('grid');
+        button.classList.remove('border-primary', 'text-primary');
+        button.classList.add('border-transparent', 'text-slate-muted');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      document.body.classList.add('group-scroll');
+    } else {
+      document.body.classList.remove('group-scroll');
+    }
+  });
+
+    // Mobile Menu Toggle Logic
+    document.addEventListener("DOMContentLoaded", () => {
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const line1 = document.getElementById('hamburger-line-1');
+        const line2 = document.getElementById('hamburger-line-2');
+        const line3 = document.getElementById('hamburger-line-3');
+
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                const isExpanded = !mobileMenu.classList.contains('translate-x-full');
+                if (isExpanded) {
+                    // Close
+                    mobileMenu.classList.add('translate-x-full');
+                    line1.classList.remove('rotate-45', 'translate-y-2');
+                    line2.classList.remove('opacity-0');
+                    line3.classList.remove('-rotate-45', '-translate-y-2');
+                    document.body.style.overflow = '';
+                } else {
+                    // Open
+                    mobileMenu.classList.remove('translate-x-full');
+                    line1.classList.add('rotate-45', 'translate-y-2');
+                    line2.classList.add('opacity-0');
+                    line3.classList.add('-rotate-45', '-translate-y-2');
+                    document.body.style.overflow = 'hidden'; // prevent background scrolling
+                }
+            });
+        }
+    });
+</script>
+
+
+
+
+
+
+
+<!-- Mobile Menu Overlay -->
+<div id="mobile-menu" class="fixed inset-0 bg-pure-white z-40 transform translate-x-full transition-transform duration-300 pt-[88px] px-margin-mobile overflow-y-auto pb-10">
+    <nav class="flex flex-col gap-6 pt-10">
+        <a href="home.html" class="font-section-title text-2xl text-primary border-b border-outline-variant/30 pb-4">Home</a>
+        <a href="product_page.html" class="font-section-title text-2xl text-primary border-b border-outline-variant/30 pb-4">Products</a>
+        <a href="blog.html" class="font-section-title text-2xl text-primary border-b border-outline-variant/30 pb-4">Blog</a>
+        <a href="about_us.html" class="font-section-title text-2xl text-primary border-b border-outline-variant/30 pb-4">About Us</a>
+        <a href="contact_us.html" class="font-section-title text-2xl text-primary border-b border-outline-variant/30 pb-4">Contact Us</a>
+        <button onclick="window.location.href='contact_us.html#request-quote'" class="mt-8 bg-primary text-on-primary px-8 py-4 rounded-full font-label-caps text-label-caps shadow-md w-full active:scale-95 transition-all">Request a Quote</button>
+    </nav>
+</div>
+
+</body></html>

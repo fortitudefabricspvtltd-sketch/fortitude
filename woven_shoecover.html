@@ -1,0 +1,353 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Fortitude Fabrics - Woven Shoe Cover</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-bright": "#f9f9f6",
+                        "on-surface": "#1a1c1b",
+                        "surface-alt": "#EFEFEF",
+                        "tertiary-fixed": "#adecff",
+                        "surface-variant": "#e2e3e0",
+                        "surface-container": "#eeeeeb",
+                        "surface-tint": "#38637c",
+                        "on-tertiary-container": "#52acc3",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed-dim": "#b9c9ce",
+                        "primary-fixed-dim": "#a1cce8",
+                        "tertiary": "#00262e",
+                        "primary-container": "#063b52",
+                        "on-tertiary-fixed": "#001f26",
+                        "on-secondary-container": "#57676b",
+                        "surface-container-low": "#f4f4f1",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed-variant": "#004e5d",
+                        "secondary": "#516165",
+                        "surface-dim": "#dadad7",
+                        "on-secondary-fixed": "#0e1e22",
+                        "primary-fixed": "#c5e7ff",
+                        "surface": "#f9f9f6",
+                        "background": "#f9f9f6",
+                        "on-primary-fixed-variant": "#1e4b63",
+                        "surface-container-highest": "#e2e3e0",
+                        "on-primary-fixed": "#001e2d",
+                        "surface-container-high": "#e8e8e5",
+                        "on-tertiary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-primary": "#ffffff",
+                        "secondary-container": "#d4e5ea",
+                        "on-error": "#ffffff",
+                        "slate-muted": "#5A7080",
+                        "pure-white": "#FFFFFF",
+                        "tertiary-container": "#003d49",
+                        "error-container": "#ffdad6",
+                        "on-background": "#1a1c1b",
+                        "inverse-surface": "#2f312f",
+                        "on-secondary-fixed-variant": "#3a494d",
+                        "outline": "#72787d",
+                        "inverse-primary": "#a1cce8",
+                        "inverse-on-surface": "#f1f1ee",
+                        "soft-sky": "#B6D7E8",
+                        "primary": "#002435",
+                        "tertiary-fixed-dim": "#7bd3ea",
+                        "on-surface-variant": "#41484c",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed": "#d4e5ea",
+                        "outline-variant": "#c1c7cd",
+                        "on-primary-container": "#7ba5c0"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-gap-desktop": "120px",
+                        "section-gap-mobile": "64px",
+                        "gutter": "24px",
+                        "margin-desktop": "80px",
+                        "margin-mobile": "20px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "hero-lg-mobile": ["Nunito Sans"],
+                        "body-main": ["Nunito Sans"],
+                        "hero-lg": ["Nunito Sans"],
+                        "section-title": ["Nunito Sans"],
+                        "body-small": ["Nunito Sans"],
+                        "label-caps": ["Nunito Sans"],
+                        "section-title-mobile": ["Nunito Sans"],
+                        "card-title": ["Nunito Sans"]
+                    },
+                    "fontSize": {
+                        "hero-lg-mobile": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "800"}],
+                        "body-main": ["18px", {"lineHeight": "160%", "fontWeight": "400"}],
+                        "hero-lg": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "section-title": ["48px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "body-small": ["16px", {"lineHeight": "150%", "fontWeight": "400"}],
+                        "label-caps": ["14px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "section-title-mobile": ["32px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                        "card-title": ["24px", {"lineHeight": "1.4", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .group-scroll .scrolled-bg { background-color: #FFFFFF; }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-surface-bright text-on-surface font-body-main selection:bg-primary selection:text-white">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full h-[88px] z-50 bg-transparent transition-colors duration-300" id="navbar">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop w-full max-w-[1440px] mx-auto h-full">
+<a class="font-section-title text-section-title text-primary dark:text-on-primary" href="#"><img alt="Fortitude Fabrics Logo" class="h-[86px] w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmfU3kPX6XCgyFR6yejbJac51k7_DzD5e18AEjDAbondGQ7KK5uFkLSmXX0sB5raRTCDLvqBOoGkszgpqgBPK9ThHazv7oFZUfYpdMPRrBJvuVBLJgAn08BKTCb1HPanMa8qb7fse5FILFHDmY-aR_jZUoUL39GcCAKwHW_jE1fGI1FGt_fqUr_jWas8t7oIH70-CAK3NDVurNaMfcAdijObOaDUblnmL_JJ5tkCM_hVNgCJZlv4Hi6Pb1Na0DCLGDrSDCtiny9fg" style="cursor:pointer" onclick="window.location.href='home.html'"></a>
+<div class="hidden md:flex items-center space-x-8">
+<a class="font-body-small text-body-small text-primary dark:text-on-primary opacity-80 hover:opacity-100 hover:scale-[1.02] transition-all" href="home.html">Home</a>
+<a class="font-body-small text-body-small text-primary dark:text-on-primary border-b-2 border-primary pb-1 hover:opacity-100 hover:scale-[1.02] transition-all" href="product_page.html">Products</a>
+<a class="font-body-small text-body-small text-primary dark:text-on-primary opacity-80 hover:opacity-100 hover:scale-[1.02] transition-all" href="blog.html">Blog</a>
+<a class="font-body-small text-body-small text-primary dark:text-on-primary opacity-80 hover:opacity-100 hover:scale-[1.02] transition-all" href="about_us.html">About Us</a>
+
+<a class="font-body-small text-body-small text-primary dark:text-on-primary opacity-80 hover:opacity-100 hover:scale-[1.02] transition-all" href="contact_us.html">Contact Us</a>
+</div>
+<button onclick="window.location.href='contact_us.html#request-quote'" class="bg-primary text-on-primary px-8 py-3 rounded-full font-label-caps hover:scale-[1.02] active:scale-95 transition-all">
+                Request a Quote
+            </button>
+</div>
+</nav>
+<main class="pt-[88px]">
+<!-- Breadcrumbs -->
+<section class="px-margin-mobile md:px-margin-desktop py-8 max-w-[1440px] mx-auto"><div class="flex flex-col gap-4"><span class="font-label-caps text-primary tracking-widest text-xs">WOVEN GARMENTS</span><nav class="flex items-center space-x-2 text-slate-muted font-body-small"><a class="hover:text-primary transition-colors" href="home.html">Home</a><span class="material-symbols-outlined text-[16px]">chevron_right</span><a class="hover:text-primary transition-colors" href="product_page.html">Products</a><span class="material-symbols-outlined text-[16px]">chevron_right</span><span class="text-primary font-bold">Woven Shoe Cover</span></nav></div></section>
+<!-- Product Hero Section -->
+<section class="px-margin-mobile md:px-margin-desktop py-12 max-w-[1440px] mx-auto"><div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-start"><div class="relative group"><div class="absolute top-6 left-6 z-20 flex flex-col gap-2"><span class="bg-primary text-white px-4 py-1.5 rounded-full font-label-caps text-[10px] tracking-wider shadow-lg">INDUSTRIAL GRADE</span><span class="bg-white/90 backdrop-blur-md text-primary px-4 py-1.5 rounded-full font-label-caps text-[10px] tracking-wider shadow-lg">REUSABLE</span></div><div class="bg-surface-container rounded-3xl overflow-hidden aspect-square flex items-center justify-center border border-outline-variant/30"><img alt="Woven Shoe Cover" class="w-full h-full transition-transform duration-700 group-hover:scale-105 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoPJfj6Du1uxOOJk5AeBaQXc94iyGCAtq1uJ3Jo_k06nb_cdfmOOSmW6kt8Pset-1Nc1Esjn3FzzPOq36kCiuq4QoQ-lMpKN0MOqvzTCBUkLsXuDo4KCVYjRvjhDWSeWRCIs4uMTEh4u7LH1Yc2aioYnsi80FDshjEgg2fFIg9hTRHAZJzLeLMdIdHnLkidsOVwWtLib8i0XcFxyb4EZ3XV4WZVEJhtw3DucstD9ohc3uFQ_FX9Ys4leusoQqVmc9uRd-qZsgu1EQ"></div></div><div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-primary-container mb-2">WOVEN GARMENTS</span>
+<h1 class="font-section-title text-section-title text-primary mb-4 leading-tight">Woven Shoe Cover</h1>
+<div class="h-[1px] bg-outline-variant w-24 mb-8"></div>
+<p class="font-body-main text-slate-muted mb-10 leading-relaxed max-w-xl">
+                    Fortitude Fabrics' Woven Shoe Cover is built for industrial and regulated environments where floor hygiene, worker safety, and footwear protection must all be maintained simultaneously. Constructed from heavy-duty woven fabric with an anti-skid reinforced sole.
+                </p>
+<!-- Quick Specs Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter mb-12">
+<div class="p-6 bg-surface-container-low rounded-xl border border-outline-variant/30">
+<p class="text-label-caps text-[12px] text-on-surface-variant mb-1 uppercase">Material</p>
+<p class="font-card-title text-[18px] text-primary">Heavy-Duty Woven</p>
+</div>
+<div class="p-6 bg-surface-container-low rounded-xl border border-outline-variant/30">
+<p class="text-label-caps text-[12px] text-on-surface-variant mb-1 uppercase">Sole</p>
+<p class="font-card-title text-[18px] text-primary">Anti-Skid Reinforced</p>
+</div>
+<div class="p-6 bg-surface-container-low rounded-xl border border-outline-variant/30">
+<p class="text-label-caps text-[12px] text-on-surface-variant mb-1 uppercase">Use Type</p>
+<p class="font-card-title text-[18px] text-primary">Reusable</p>
+</div>
+<div class="p-6 bg-surface-container-low rounded-xl border border-outline-variant/30">
+<p class="text-label-caps text-[12px] text-on-surface-variant mb-1 uppercase">Closure</p>
+<p class="font-card-title text-[18px] text-primary">Elasticated Opening</p>
+</div>
+</div>
+<div class="flex flex-wrap gap-4">
+<button onclick="window.location.href='contact_us.html#request-quote'" class="bg-primary text-on-primary font-bold px-10 py-5 rounded-full hover:scale-[1.02] transition-all shadow-lg active:scale-[0.98] flex items-center gap-2">
+<span class="material-symbols-outlined">mail</span>
+                        Inquire for Bulk Order
+                    </button>
+
+</div>
+</div></div></section>
+<!-- Details Tabs -->
+<section class="mb-section-gap-desktop px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto">
+<div class="border-b border-outline-variant flex gap-10 mb-10 overflow-x-auto no-scrollbar">
+<button class="pb-4 font-bold transition-all whitespace-nowrap text-primary border-b-2 border-primary cursor-default" id="tab-btn-description">Description</button>
+</div>
+<!-- Tab Panels -->
+<div class="tab-panel animate-in fade-in duration-500" id="tab-description">
+<div class="max-w-4xl">
+<h3 class="font-card-title text-primary mb-4">Floor Safety and Contamination Control, Combined</h3>
+<p class="text-slate-muted leading-relaxed mb-6">
+                        The Fortitude Fabrics Woven Shoe Cover solves two problems simultaneously: it prevents dirt, dust, and contaminants on the soles of footwear from entering regulated production areas, and it actively reduces slip risk for workers moving across smooth clinical or industrial floors.
+                    </p>
+<p class="text-slate-muted leading-relaxed">
+                        The heavy-duty woven construction maintains these protective properties through repeated wash and sterilisation cycles — making it a far more cost-effective long-term solution than disposable alternatives. Each shoe cover is finished with a reinforced anti-skid sole pattern and an elasticated opening that secures over footwear of all sizes.
+                    </p>
+</div>
+<h3 class="font-card-title text-primary mb-6 mt-12">Key Features</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="flex gap-4 items-start">
+<div class="w-12 h-12 bg-secondary-container rounded-full flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary">footprint</span>
+</div>
+<div>
+<h4 class="font-bold text-primary mb-1">Anti-Skid Sole</h4>
+<p class="text-body-small text-slate-muted">Reinforced sole pattern grips smooth industrial and clinical flooring, reducing slip incidents.</p>
+</div>
+</div>
+<div class="flex gap-4 items-start">
+<div class="w-12 h-12 bg-secondary-container rounded-full flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary">verified_user</span>
+</div>
+<div>
+<h4 class="font-bold text-primary mb-1">Contamination Barrier</h4>
+<p class="text-body-small text-slate-muted">Heavy-duty woven fabric prevents external particulates from entering sterile production zones.</p>
+</div>
+</div>
+<div class="flex gap-4 items-start">
+<div class="w-12 h-12 bg-secondary-container rounded-full flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary">autorenew</span>
+</div>
+<div>
+<h4 class="font-bold text-primary mb-1">Wash &amp; Reuse</h4>
+<p class="text-body-small text-slate-muted">Maintains structural integrity and protection after multiple industrial washes.</p>
+</div>
+</div>
+</div>
+<h3 class="font-card-title text-primary mb-6 mt-12">Application Areas</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 md:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="p-6 bg-pure-white border border-outline-variant rounded-lg text-center">
+<span class="material-symbols-outlined text-4xl text-primary mb-3">medical_services</span>
+<p class="font-bold text-primary">Hospitals &amp; Pharma</p>
+</div>
+<div class="p-6 bg-pure-white border border-outline-variant rounded-lg text-center">
+<span class="material-symbols-outlined text-4xl text-primary mb-3">restaurant</span>
+<p class="font-bold text-primary">Food Processing</p>
+</div>
+<div class="p-6 bg-pure-white border border-outline-variant rounded-lg text-center">
+<span class="material-symbols-outlined text-4xl text-primary mb-3">memory</span>
+<p class="font-bold text-primary">Electronics</p>
+</div>
+<div class="p-6 bg-pure-white border border-outline-variant rounded-lg text-center">
+<span class="material-symbols-outlined text-4xl text-primary mb-3">factory</span>
+<p class="font-bold text-primary">Industrial Mfg.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Banner -->
+<section class="px-margin-mobile md:px-margin-desktop py-section-gap-desktop max-w-[1440px] mx-auto"><div class="bg-primary rounded-3xl p-margin-desktop text-center relative overflow-hidden px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto mb-section-gap-desktop">
+<div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 40px 40px;"></div>
+<div class="relative z-10">
+<h2 class="font-section-title text-on-primary mb-6">Need Custom Sizes, Colours, or Bulk Quantities?</h2>
+<p class="text-soft-sky text-body-main mb-10 max-w-2xl mx-auto">
+                    We manufacture woven shoe covers in bulk for pharmaceutical, food processing, and industrial clients across India and internationally. Custom colour coding available for facility zoning.
+                </p>
+<button onclick="window.location.href='contact_us.html'" class="bg-on-tertiary-container text-white font-bold px-12 py-5 rounded-full hover:scale-105 transition-all shadow-xl active:scale-95">
+                    Contact Our Team
+                </button>
+</div>
+</div></section>
+<!-- Related Products -->
+</main>
+<!-- Footer -->
+<footer class="bg-primary py-section-gap-desktop border-t border-primary-container">
+<div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="flex flex-col lg:flex-row justify-between gap-12 lg:gap-20 mb-16">
+<!-- Brand Column -->
+<div class="space-y-6 lg:w-2/5">
+<a href="home.html" style="cursor:pointer;display:inline-block"><span class="font-section-title text-4xl font-extrabold text-on-primary tracking-tight">Fortitude Fabrics</span></a>
+<p class="font-body-small text-on-primary/70 leading-relaxed">Precision-engineered technical textiles for India's high-growth industrial sectors. Manufactured in Telangana, serving the world.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center hover:bg-on-tertiary-container transition-colors" href="#"><span class="material-symbols-outlined text-on-primary">hub</span></a>
+<a class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center hover:bg-on-tertiary-container transition-colors" href="#"><span class="material-symbols-outlined text-on-primary">group</span></a>
+</div>
+</div>
+<!-- Resources -->
+<div class="flex flex-col gap-4 lg:w-1/5">
+<h4 class="font-label-caps text-on-tertiary-container mb-4">RESOURCES</h4>
+<a class="font-body-small text-on-primary opacity-70 hover:opacity-100 hover:translate-x-1 transition-all" href="home.html">Home</a>
+<a class="font-body-small text-on-primary opacity-70 hover:opacity-100 hover:translate-x-1 transition-all" href="product_page.html">Products</a>
+<a class="font-body-small text-on-primary opacity-70 hover:opacity-100 hover:translate-x-1 transition-all" href="about_us.html">About Us</a>
+<a class="font-body-small text-on-primary opacity-70 hover:opacity-100 hover:translate-x-1 transition-all" href="contact_us.html">Contact Us</a>
+<a class="font-body-small text-on-primary opacity-70 hover:opacity-100 hover:translate-x-1 transition-all" href="blog.html">Blog Posts</a>
+</div>
+
+<!-- Contact -->
+<div class="flex flex-col gap-4 lg:w-2/5">
+<h4 class="font-label-caps text-on-tertiary-container mb-4">CONTACT</h4>
+<div class="space-y-4">
+<div class="flex items-start gap-2"><span class="material-symbols-outlined text-on-primary/70 text-sm mt-1">call</span><div><a href="tel:+919490255858" class="font-body-small text-on-primary opacity-70 hover:opacity-100 transition-opacity block">+91 94902 55858</a><p class="text-[12px] text-on-primary/50">Mon–Fri: 8:00 AM – 8:00 PM | Sat: 9:00 AM – 7:00 PM</p></div></div>
+<div class="flex items-start gap-2"><span class="material-symbols-outlined text-on-primary/70 text-sm mt-1">mail</span><div><a href="mailto:business@fortitudefabric.com" class="font-body-small text-on-primary opacity-70 hover:opacity-100 transition-opacity">business@fortitudefabric.com</a></div></div>
+<div class="flex items-start gap-2"><span class="material-symbols-outlined text-on-primary/70 text-sm mt-1">location_on</span><div><p class="font-body-small text-on-primary opacity-70">Wyra, Khammam, Telangana, India</p></div></div>
+<div class="flex items-start gap-2"><span class="material-symbols-outlined text-on-primary/70 text-sm mt-1">language</span><a href="https://www.fortitudefabric.com" target="_blank" rel="noopener noreferrer" class="font-body-small text-on-primary opacity-70 hover:opacity-100 transition-opacity">www.fortitudefabric.com</a></div>
+</div>
+</div>
+</div>
+<div class="pt-8 border-t border-primary-container flex flex-col md:flex-row justify-between items-center gap-6">
+<p class="text-on-primary/50 text-[14px]">© 2024 Fortitude Fabrics. All rights reserved. Precision Manufacturing.</p>
+
+</div>
+</div>
+</footer>
+<script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('bg-pure-white', 'shadow-md', 'group-scroll');
+                nav.classList.remove('bg-transparent');
+            } else {
+                nav.classList.remove('bg-pure-white', 'shadow-md', 'group-scroll');
+                nav.classList.add('bg-transparent');
+            }
+        });
+
+        // Mobile Menu Toggle Logic
+    document.addEventListener("DOMContentLoaded", () => {
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const line1 = document.getElementById('hamburger-line-1');
+        const line2 = document.getElementById('hamburger-line-2');
+        const line3 = document.getElementById('hamburger-line-3');
+
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                const isExpanded = !mobileMenu.classList.contains('translate-x-full');
+                if (isExpanded) {
+                    // Close
+                    mobileMenu.classList.add('translate-x-full');
+                    line1.classList.remove('rotate-45', 'translate-y-2');
+                    line2.classList.remove('opacity-0');
+                    line3.classList.remove('-rotate-45', '-translate-y-2');
+                    document.body.style.overflow = '';
+                } else {
+                    // Open
+                    mobileMenu.classList.remove('translate-x-full');
+                    line1.classList.add('rotate-45', 'translate-y-2');
+                    line2.classList.add('opacity-0');
+                    line3.classList.add('-rotate-45', '-translate-y-2');
+                    document.body.style.overflow = 'hidden'; // prevent background scrolling
+                }
+            });
+        }
+    });
+</script>
+
+
+
+<!-- Mobile Menu Overlay -->
+<div id="mobile-menu" class="fixed inset-0 bg-pure-white z-40 transform translate-x-full transition-transform duration-300 pt-[88px] px-margin-mobile overflow-y-auto pb-10">
+    <nav class="flex flex-col gap-6 pt-10">
+        <a href="home.html" class="font-section-title text-2xl text-primary border-b border-outline-variant/30 pb-4">Home</a>
+        <a href="product_page.html" class="font-section-title text-2xl text-primary border-b border-outline-variant/30 pb-4">Products</a>
+        <a href="blog.html" class="font-section-title text-2xl text-primary border-b border-outline-variant/30 pb-4">Blog</a>
+        <a href="about_us.html" class="font-section-title text-2xl text-primary border-b border-outline-variant/30 pb-4">About Us</a>
+        <a href="contact_us.html" class="font-section-title text-2xl text-primary border-b border-outline-variant/30 pb-4">Contact Us</a>
+        <button onclick="window.location.href='contact_us.html#request-quote'" class="mt-8 bg-primary text-on-primary px-8 py-4 rounded-full font-label-caps text-label-caps shadow-md w-full active:scale-95 transition-all">Request a Quote</button>
+    </nav>
+</div>
+
+</body></html>

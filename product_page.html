@@ -1,0 +1,672 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Products | Fortitude Fabrics</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fadeIn {
+            animation: fadeIn 0.4s ease forwards;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-dim": "#dadad7",
+                        "slate-muted": "#5A7080",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed-dim": "#7bd3ea",
+                        "inverse-surface": "#2f312f",
+                        "surface-tint": "#38637c",
+                        "on-tertiary-container": "#52acc3",
+                        "surface-variant": "#e2e3e0",
+                        "primary-container": "#063b52",
+                        "on-secondary-fixed-variant": "#3a494d",
+                        "on-primary": "#ffffff",
+                        "outline": "#72787d",
+                        "on-error-container": "#93000a",
+                        "background": "#f9f9f6",
+                        "on-error": "#ffffff",
+                        "surface-container-low": "#f4f4f1",
+                        "surface-alt": "#EFEFEF",
+                        "on-primary-fixed": "#001e2d",
+                        "soft-sky": "#B6D7E8",
+                        "on-tertiary-fixed": "#001f26",
+                        "on-secondary-container": "#57676b",
+                        "on-surface": "#1a1c1b",
+                        "on-primary-container": "#7ba5c0",
+                        "secondary-fixed": "#d4e5ea",
+                        "error": "#ba1a1a",
+                        "tertiary": "#00262e",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-highest": "#e2e3e0",
+                        "surface-container": "#eeeeeb",
+                        "pure-white": "#FFFFFF",
+                        "surface": "#f9f9f6",
+                        "on-secondary-fixed": "#0e1e22",
+                        "inverse-on-surface": "#f1f1ee",
+                        "on-tertiary-fixed-variant": "#004e5d",
+                        "on-background": "#1a1c1b",
+                        "tertiary-container": "#003d49",
+                        "surface-bright": "#f9f9f6",
+                        "outline-variant": "#c1c7cd",
+                        "inverse-primary": "#a1cce8",
+                        "primary-fixed-dim": "#a1cce8",
+                        "tertiary-fixed": "#adecff",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-high": "#e8e8e5",
+                        "primary-fixed": "#c5e7ff",
+                        "on-surface-variant": "#41484c",
+                        "secondary-fixed-dim": "#b9c9ce",
+                        "primary": "#002435",
+                        "secondary-container": "#d4e5ea",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed-variant": "#1e4b63",
+                        "secondary": "#516165"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "gutter": "24px",
+                        "section-gap-mobile": "64px",
+                        "base": "8px",
+                        "margin-desktop": "80px",
+                        "section-gap-desktop": "120px"
+                    },
+                    "fontFamily": {
+                        "section-title": ["Nunito Sans"],
+                        "section-title-mobile": ["Nunito Sans"],
+                        "hero-lg": ["Nunito Sans"],
+                        "body-main": ["Nunito Sans"],
+                        "card-title": ["Nunito Sans"],
+                        "hero-lg-mobile": ["Nunito Sans"],
+                        "body-small": ["Nunito Sans"],
+                        "label-caps": ["Nunito Sans"]
+                    },
+                    "fontSize": {
+                        "section-title": ["48px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "section-title-mobile": ["32px", { "lineHeight": "1.3", "fontWeight": "700" }],
+                        "hero-lg": ["72px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "body-main": ["18px", { "lineHeight": "160%", "fontWeight": "400" }],
+                        "card-title": ["24px", { "lineHeight": "1.4", "fontWeight": "700" }],
+                        "hero-lg-mobile": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "800" }],
+                        "body-small": ["16px", { "lineHeight": "150%", "fontWeight": "400" }],
+                        "label-caps": ["14px", { "lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700" }]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-main selection:bg-primary-container selection:text-on-primary-container">
+<!-- Navigation -->
+<header class="fixed top-0 w-full h-[88px] z-50 transition-all duration-300 bg-pure-white border-b border-outline-variant" id="top-nav">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop w-full max-w-[1440px] mx-auto h-full">
+<div class="font-section-title text-[28px] font-extrabold text-primary tracking-tight">
+<img alt="Fortitude Fabrics Logo" class="h-[86px] w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIx6Lqzh1DtqWkUuyqgtDrcOcLuN8SVvq5FvgfxwnyLE544ar4Ot6GWM7mzonvRuA2__pBooqXwkgmKKjMuK_FMYzC7WsQKwVrySwF1pGM02LTMNsww2c4sQKPqyrbYUVxpfCVF9Npf6xjXumaAh7wGuEMnfCMmY7QrMGM5YVNqXNwKUycNnQQFFfvfPYY3Ogg6IE3oGzTiNfkiqLbgCvCByogqUXHmQ1Gl3eIgZyIIoi3NwJ0WFqJcw29oxfYf1oP9xfs6DPtiX4" style="cursor:pointer" onclick="window.location.href='home.html'">
+</div>
+<nav class="hidden md:flex items-center gap-8 h-full">
+<a class="font-body-small text-body-small text-primary hover:opacity-100 hover:scale-[1.02] transition-all" href="home.html">Home</a>
+<div class="h-full flex items-center relative group/products">
+<a class="font-body-small text-body-small text-primary opacity-80 flex items-center gap-1 hover:opacity-100 transition-all border-b-2 border-primary pb-1" href="product_page.html" id="products-btn">
+                    Products <span class="material-symbols-outlined text-sm">expand_more</span>
+</a>
+<!-- Mega Menu -->
+<div class="mega-menu absolute top-[88px] left-0 w-[600px] bg-pure-white p-8 rounded-xl shadow-2xl grid grid-cols-1 md:grid-cols-2 gap-8 z-50 opacity-0 invisible pointer-events-none group-hover/products:opacity-100 group-hover/products:visible group-hover/products:pointer-events-auto transition-all duration-200" id="products-menu">
+<div>
+<h4 class="font-label-caps text-label-caps text-on-primary-container mb-4">FABRIC TYPES</h4>
+<ul class="space-y-3">
+<li class=""><a class="text-body-small hover:text-on-tertiary-container transition-colors" href="product_page.html#section-woven">Woven Technical Textiles</a></li>
+<li class=""><a class="text-body-small hover:text-on-tertiary-container transition-colors" href="product_page.html#section-non-woven">Non-Woven Filtration</a></li>
+<li class=""><a class="text-body-small hover:text-on-tertiary-container transition-colors" href="product_page.html#section-woven">Antistatic Materials</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-on-primary-container mb-4">PRODUCTS</h4>
+<ul class="space-y-3">
+<li class=""><a class="text-body-small hover:text-on-tertiary-container transition-colors" href="product_page.html#section-lint-free">Lint-Free Rolls</a></li>
+<li class=""><a class="text-body-small hover:text-on-tertiary-container transition-colors" href="product_page.html#section-uniforms">Cleanroom Uniforms</a></li>
+<li class=""><a class="text-body-small hover:text-on-tertiary-container transition-colors" href="product_page.html#section-woven">Industrial Coveralls</a></li>
+</ul>
+</div>
+</div>
+</div>
+<a class="font-body-small text-body-small text-primary opacity-80 hover:opacity-100 hover:scale-[1.02] transition-all" href="blog.html">Blog</a>
+<a class="font-body-small text-body-small text-primary opacity-80 hover:opacity-100 hover:scale-[1.02] transition-all" href="about_us.html">About Us</a>
+<a class="font-body-small text-body-small text-primary opacity-80 hover:opacity-100 hover:scale-[1.02] transition-all" href="contact_us.html">Contact Us</a>
+</nav>
+<button onclick="window.location.href='contact_us.html#request-quote'" class="hidden md:block bg-primary text-on-primary px-8 py-3 rounded-full font-label-caps text-label-caps hover:scale-[1.02] active:scale-[0.98] transition-all shadow-md">
+            Request a Quote
+        </button>
+
+<!-- Mobile Menu Toggle Button -->
+<button id="mobile-menu-btn" class="md:hidden flex flex-col justify-center gap-1.5 p-2 z-[60] relative">
+    <span class="w-6 h-0.5 bg-primary transition-all duration-300 transform origin-center" id="hamburger-line-1"></span>
+    <span class="w-6 h-0.5 bg-primary transition-all duration-300 transform origin-center" id="hamburger-line-2"></span>
+    <span class="w-6 h-0.5 bg-primary transition-all duration-300 transform origin-center" id="hamburger-line-3"></span>
+</button>
+
+</div>
+</header>
+<!-- Hero Section -->
+<section class="min-h-[358px] bg-primary flex flex-col justify-center items-center text-center px-margin-mobile pt-32 pb-16">
+<span class="font-label-caps text-on-primary-container mb-4 tracking-widest uppercase">Product Catalogue</span>
+<h1 class="font-hero-lg-mobile md:font-hero-lg text-on-primary mb-8">Four Lines. Built for Industry.</h1>
+<div class="flex flex-wrap justify-center gap-4">
+<div class="bg-primary-container border border-outline/30 px-6 py-2 rounded-full flex items-center gap-2">
+<span class="material-symbols-outlined text-soft-sky text-[18px]">factory</span>
+<span class="font-label-caps text-on-primary text-[12px]">Global Supply</span>
+</div>
+<div class="bg-primary-container border border-outline/30 px-6 py-2 rounded-full flex items-center gap-2">
+<span class="material-symbols-outlined text-soft-sky text-[18px]">biotech</span>
+<span class="font-label-caps text-on-primary text-[12px]">Lint-Free Certified</span>
+</div>
+</div>
+</section>
+<!-- Sticky Filter Bar -->
+<div class="sticky top-[88px] z-40 bg-pure-white border-b border-outline-variant shadow-sm transition-all duration-300" id="sticky-filter">
+<div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop overflow-x-auto no-scrollbar">
+<div class="flex gap-8 py-4 whitespace-nowrap">
+<button class="filter-btn font-label-caps text-primary border-b-2 border-primary pb-1 transition-all" data-filter="all" onclick="scrollToSection('section-woven')">All Products</button>
+<button class="filter-btn font-label-caps text-slate-muted hover:text-primary transition-all pb-1 border-b-2 border-transparent" data-filter="woven" onclick="scrollToSection('section-woven')">Woven Garments</button>
+<button class="filter-btn font-label-caps text-slate-muted hover:text-primary transition-all pb-1 border-b-2 border-transparent" data-filter="non-woven" onclick="scrollToSection('section-non-woven')">Non-Woven Garments</button>
+<button class="filter-btn font-label-caps text-slate-muted hover:text-primary transition-all pb-1 border-b-2 border-transparent" data-filter="uniforms" onclick="scrollToSection('section-uniforms')">Uniforms</button>
+<button class="filter-btn font-label-caps text-slate-muted hover:text-primary transition-all pb-1 border-b-2 border-transparent" data-filter="lint-free" onclick="scrollToSection('section-lint-free')">Lint-Free Rolls</button>
+</div>
+</div>
+</div>
+<main class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop py-12 md:py-20">
+<div class="flex flex-col gap-16" id="product-grid">
+<!-- Category: Woven -->
+<div class="category-section" data-category="woven" id="section-woven">
+<div class="flex items-center gap-6 mb-12">
+<span class="font-hero-lg text-primary/10 select-none">01</span>
+<div>
+<h2 class="font-section-title text-primary uppercase">Woven Garments</h2>
+<div class="h-1 w-24 bg-primary mt-2"></div>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-gutter">
+<!-- Product Card: Woven Coverall -->
+<div style="cursor:pointer" onclick="window.location.href='woven_coverall.html'" class="group relative bg-pure-white border border-outline-variant/30 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all h-[400px]" data-category="woven">
+<div class="absolute inset-0 flex items-center justify-center p-4">
+<img alt="Woven Coverall" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQmZ2r6WgfwgdWE1AxFkp12wVpDDgKisYcybM0PpoPu8D5XxEVs_iVNDpqpRPdBYU4RpKmctfnZ_tqczcbyiX_lXNI7oktJcy5vP_fexWXEV20fAX5PefEJZFjKgdRO0tanBHYmJFp8cHE5n7wh5NBGvCLZ_qDi3wm1_vw-QuMI44Tgbsx3uK5XOL7QU0_q_IkRppw2QTeuCplAkmTZIyp2HVTgrXNTLezyqOibUz3V-LAOFpr-57jBPSGtiJUbh2H6unDvHVvSZc">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex flex-col justify-end p-6 pointer-events-none">
+<span class="font-label-caps text-on-tertiary-container text-[12px] mb-1 uppercase drop-shadow-md">Woven Category</span>
+<h3 class="font-card-title text-white mb-2 drop-shadow-md">Woven Coverall</h3>
+<p class="text-[14px] text-white/90 line-clamp-2 mb-3 drop-shadow-sm">Precision-stitched durable coveralls for heavy industrial environments.</p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="bg-white/20 backdrop-blur-sm text-white px-2 py-0.5 rounded text-[10px] font-bold uppercase">Breathable</span>
+<span class="bg-white/20 backdrop-blur-sm text-white px-2 py-0.5 rounded text-[10px] font-bold uppercase">Flame Retardant</span>
+</div>
+<div class="flex justify-between items-center border-t border-white/20 pt-3 pointer-events-auto">
+<span class="font-label-caps text-white text-[12px]">View Details</span>
+<span class="material-symbols-outlined text-white text-[20px]">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Product Card: Woven Head Cap -->
+<div style="cursor:pointer" onclick="window.location.href='woven_headcap.html'" class="group relative bg-pure-white border border-outline-variant/30 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all h-[400px]" data-category="woven">
+<div class="absolute inset-0 flex items-center justify-center p-4">
+<img alt="Woven Head Cap" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEASWkBX1D4jqGLYyaySgpQ1RMoUqi0ZWlQ4gV-XooKK-dzwUVtGcVETD6aJJsVhSzLXScOHKpg7ViapcBW3Kyhs3Eha4liDmqoqo8QO-8Zqysa7JGypCHYDSkeZks8SEpOmNf871Zw0ZCzPqwBPRF5fA7p1LyLBqmxeMsjXO2KPtWKqLUi1TvV3ldNDUFpGXTCb-9TLx9w9znNl-U1anskKmGzfdO5RkzDZxmbclknq29bw_RRznuhJJoTZMg20uG6RXW5lYz46c">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex flex-col justify-end p-6 pointer-events-none">
+<span class="font-label-caps text-on-tertiary-container text-[12px] mb-1 uppercase drop-shadow-md">Woven Category</span>
+<h3 class="font-card-title text-white mb-2 drop-shadow-md">Woven Head Cap</h3>
+<p class="text-[14px] text-white/90 line-clamp-2 mb-3 drop-shadow-sm">Ergonomic fit with high-density weave for particle retention.</p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="bg-white/20 backdrop-blur-sm text-white px-2 py-0.5 rounded text-[10px] font-bold uppercase">Ergonomic</span>
+</div>
+<div class="flex justify-between items-center border-t border-white/20 pt-3 pointer-events-auto">
+<span class="font-label-caps text-white text-[12px]">View Details</span>
+<span class="material-symbols-outlined text-white text-[20px]">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Product Card: Woven Shoe Cover -->
+<div style="cursor:pointer" onclick="window.location.href='woven_shoecover.html'" class="group relative bg-pure-white border border-outline-variant/30 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all h-[400px]" data-category="woven">
+<div class="absolute inset-0 flex items-center justify-center p-4">
+<img alt="Woven Shoe Cover" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoPJfj6Du1uxOOJk5AeBaQXc94iyGCAtq1uJ3Jo_k06nb_cdfmOOSmW6kt8Pset-1Nc1Esjn3FzzPOq36kCiuq4QoQ-lMpKN0MOqvzTCBUkLsXuDo4KCVYjRvjhDWSeWRCIs4uMTEh4u7LH1Yc2aioYnsi80FDshjEgg2fFIg9hTRHAZJzLeLMdIdHnLkidsOVwWtLib8i0XcFxyb4EZ3XV4WZVEJhtw3DucstD9ohc3uFQ_FX9Ys4leusoQqVmc9uRd-qZsgu1EQ">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex flex-col justify-end p-6 pointer-events-none">
+<span class="font-label-caps text-on-tertiary-container text-[12px] mb-1 uppercase drop-shadow-md">Woven Category</span>
+<h3 class="font-card-title text-white mb-2 drop-shadow-md">Woven Shoe Cover</h3>
+<p class="text-[14px] text-white/90 line-clamp-2 mb-3 drop-shadow-sm">Heavy-duty woven fabric with anti-skid reinforcement for floor safety.</p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="bg-white/20 backdrop-blur-sm text-white px-2 py-0.5 rounded text-[10px] font-bold uppercase">Anti-Skid</span>
+<span class="bg-white/20 backdrop-blur-sm text-white px-2 py-0.5 rounded text-[10px] font-bold uppercase">Reusable</span>
+</div>
+<div class="flex justify-between items-center border-t border-white/20 pt-3 pointer-events-auto">
+<span class="font-label-caps text-white text-[12px]">View Details</span>
+<span class="material-symbols-outlined text-white text-[20px]">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Product Card: Woven Gloves -->
+<div style="cursor:pointer" onclick="window.location.href='woven_gloves.html'" class="group relative bg-pure-white border border-outline-variant/30 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all h-[400px]" data-category="woven">
+<div class="absolute inset-0 flex items-center justify-center p-4">
+<img alt="Woven Gloves" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFyAB0_-3f4RAq4BtR1k-XjkZil_qW0UtEdB8oYZvk4dN4mAxMakQ6sqUICfPljt8GwNcVc3dIRV0e0D7h32La8bJcFDjbbWFU4nhM81SLl0bJiZ-7TJL-q82GK4jbuq2ymuPDeMLoHTPa64uTQOGjm17XbYHmUAdA86Af0ORrwAJwRGEyKj7rYkVemleVTT2-Uwy_KSCcKSakjQLcSZsvm0n30XEjgcC8ahco_cMRcYGj13dYMAkRvNnkPqrZoeBtFgYT3zzcsxU">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex flex-col justify-end p-6 pointer-events-none">
+<span class="font-label-caps text-on-tertiary-container text-[12px] mb-1 uppercase drop-shadow-md">Woven Category</span>
+<h3 class="font-card-title text-white mb-2 drop-shadow-md">Woven Gloves</h3>
+<p class="text-[14px] text-white/90 line-clamp-2 mb-3 drop-shadow-sm">Ergonomic textile design for precision handling and hand protection.</p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="bg-white/20 backdrop-blur-sm text-white px-2 py-0.5 rounded text-[10px] font-bold uppercase">Dexterity</span>
+<span class="bg-white/20 backdrop-blur-sm text-white px-2 py-0.5 rounded text-[10px] font-bold uppercase">ISO Grade</span>
+</div>
+<div class="flex justify-between items-center border-t border-white/20 pt-3 pointer-events-auto">
+<span class="font-label-caps text-white text-[12px]">View Details</span>
+<span class="material-symbols-outlined text-white text-[20px]">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Category: Non-Woven -->
+<div class="category-section" data-category="non-woven" id="section-non-woven">
+<div class="flex items-center gap-6 mb-12">
+<span class="font-hero-lg text-primary/10 select-none">02</span>
+<div>
+<h2 class="font-section-title text-primary uppercase">Non-Woven Garments</h2>
+<div class="h-1 w-24 bg-primary mt-2"></div>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-gutter">
+<!-- Product Card: Non-Woven Coverall -->
+<div style="cursor:pointer" onclick="window.location.href='non_woven_coverall.html'" class="group relative bg-pure-white border border-outline-variant/30 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all h-[400px]" data-category="non-woven">
+<div class="absolute inset-0 flex items-center justify-center p-4">
+<img alt="Non-Woven Coverall" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzRdhV9VnIOlC9my1BAED5IaFhi6qWt7IxmYgJOFe4jWVFJwCGIqscOFoUUQlUfAK6cbVgcNyolTboMg7-rTXspna-oRYZAd8lTrUinddPEnsPoEiXG5Dw1DO0wr-QO4TrXakqA-td0QpnAP5MhMqgokGoDWg3hrb41BZy9I8SJAVqpcPtkMS7Njqg9yyzkMvM_bxfXcIoE__BrY9qdvPRfwc4_-bx7sdrEoaFaY2t4EViuF0k7R7_pBsW0k7gI8Tf9j63jeMijVA">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex flex-col justify-end p-6 pointer-events-none">
+<span class="font-label-caps text-on-tertiary-container text-[12px] mb-1 uppercase drop-shadow-md">Non-Woven Category</span>
+<h3 class="font-card-title text-white mb-2 drop-shadow-md">Non-Woven Coverall (SMS)</h3>
+<p class="text-[14px] text-white/90 line-clamp-2 mb-3 drop-shadow-sm">Multi-layered SMS fabric for superior liquid and particle resistance.</p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="bg-white/20 backdrop-blur-sm text-white px-2 py-0.5 rounded text-[10px] font-bold uppercase">SMS Shield</span>
+<span class="bg-white/20 backdrop-blur-sm text-white px-2 py-0.5 rounded text-[10px] font-bold uppercase">Disposable</span>
+</div>
+<div class="flex justify-between items-center border-t border-white/20 pt-3 pointer-events-auto">
+<span class="font-label-caps text-white text-[12px]">View Details</span>
+<span class="material-symbols-outlined text-white text-[20px]">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Product Card: Non-Woven Head Cap -->
+<div style="cursor:pointer" onclick="window.location.href='non_woven_headcap.html'" class="group relative bg-pure-white border border-outline-variant/30 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all h-[400px]" data-category="non-woven">
+<div class="absolute inset-0 flex items-center justify-center p-4">
+<img alt="Non-Woven Head Cap" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxTvWQ-RAgfSBHDw-0frhYPZesl9mN3iqMQNguVvApW30tB01o3jAOdZ1RaDMLXjA1qVdJXn6zWz65rhoAp-uEwtXKTkULz2hV0NSHP0vJ8aweorflmPpXXqlSId6sR_rNsMhmMM9uOcMun1OhMXAfc3HnYPxC1nLcmYcz9_gR76rOZ6ZVicVhprrA82fcUDdU--phwLDcXQho0j4sLT2zGFG82chBKE4sdn6yVidS0S_GniXhK9vKYNpWdtWDkD6_f562kzOMKFY">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex flex-col justify-end p-6 pointer-events-none">
+<span class="font-label-caps text-on-tertiary-container text-[12px] mb-1 uppercase drop-shadow-md">Non-Woven Category</span>
+<h3 class="font-card-title text-white mb-2 drop-shadow-md">Non-Woven Head Cap</h3>
+<p class="text-[14px] text-white/90 line-clamp-2 mb-3 drop-shadow-sm">Lightweight and breathable non-woven mesh for hygiene control.</p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="bg-white/20 backdrop-blur-sm text-white px-2 py-0.5 rounded text-[10px] font-bold uppercase">Bouffant Style</span>
+<span class="bg-white/20 backdrop-blur-sm text-white px-2 py-0.5 rounded text-[10px] font-bold uppercase">Anti-Static</span>
+</div>
+<div class="flex justify-between items-center border-t border-white/20 pt-3 pointer-events-auto">
+<span class="font-label-caps text-white text-[12px]">View Details</span>
+<span class="material-symbols-outlined text-white text-[20px]">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Product Card: Suitable Industrial 1 -->
+<div style="cursor:pointer" onclick="window.location.href='non_woven_shoecover.html'" class="group relative bg-pure-white border border-outline-variant/30 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all h-[400px]" data-category="non-woven">
+<div class="absolute inset-0 flex items-center justify-center p-4">
+<img alt="Non-Woven Shoe Cover" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuARk9fUyu2S2lZWbLuBDiYn4fygnhv63Qm3h7fM6uZOvafEAzrd4dSsXBs1I-EouqhBhKrGbQcRfEtY5LVdjqecdD_sQwYXLg6JWhLS3ComGil0deUE8xQnIcR3i1ObVvKgI8Gh9gOULGl-4eK9nkjnJPqCVSOIEZ3vno-IQ16ltkc66H5ZKSj-KWeIA-O4ZKhbum1CfFpxyfj1qhGm5HPhmb--bD_naIyqu-4fjGV5pFq2WLyAOiHl92Z9XGWuELt4guICDyzrnX0">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex flex-col justify-end p-6 pointer-events-none">
+<span class="font-label-caps text-on-tertiary-container text-[12px] mb-1 uppercase drop-shadow-md">Non-Woven Category</span>
+<h3 class="font-card-title text-white mb-2 drop-shadow-md">Non-Woven Shoe Cover</h3>
+<p class="text-[14px] text-white/90 line-clamp-2 mb-3 drop-shadow-sm">Durable non-woven fabric with anti-skid properties for hygiene-sensitive environments.</p>
+<div class="flex justify-between items-center border-t border-white/20 pt-3 pointer-events-auto">
+<span class="font-label-caps text-white text-[12px]">View Details</span>
+<span class="material-symbols-outlined text-white text-[20px]">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Product Card: Suitable Industrial 2 -->
+<div style="cursor:pointer" onclick="window.location.href='non_woven_gloves.html'" class="group relative bg-pure-white border border-outline-variant/30 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all h-[400px]" data-category="non-woven">
+<div class="absolute inset-0 flex items-center justify-center p-4">
+<img alt="Non-Woven Gloves" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiXIJxT7CTinWIx6wATCkPvfrmKpwXZkOp3xpcRpN-tti7WXh2llke9WMkSjftvTz_2eHxETlSvVRMCFtcr9oNlJGcc3sqIhKWXJeD4mlrdsCQKugezTjbmh4MKpn0gWARKfXOAQqZX49cMugGd3kgX4N069t5SWlWDt-4vfrleVUq2imirLc3DIUlx0gYznycXvwzwxJ7zCrTfwpx5cidud7hm2nkOLkexYo43SkG-RNiGSwK99X97fzbUNoLcr5JbCRJZCtWZXg">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex flex-col justify-end p-6 pointer-events-none">
+<span class="font-label-caps text-on-tertiary-container text-[12px] mb-1 uppercase drop-shadow-md">Service Sector</span>
+<h3 class="font-card-title text-white mb-2 drop-shadow-md">Non-Woven Gloves</h3>
+<p class="text-[14px] text-white/90 line-clamp-2 mb-3 drop-shadow-sm">Full lifecycle support for industrial textile management.</p>
+<div class="flex justify-between items-center border-t border-white/20 pt-3 pointer-events-auto">
+<span class="font-label-caps text-white text-[12px]">View Details</span>
+<span class="material-symbols-outlined text-white text-[20px]">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Category: Uniforms -->
+<div class="category-section" data-category="uniforms" id="section-uniforms">
+<div class="flex items-center gap-6 mb-12">
+<span class="font-hero-lg text-primary/10 select-none">03</span>
+<div>
+<h2 class="font-section-title text-primary uppercase">Custom Uniforms</h2>
+<div class="h-1 w-24 bg-primary mt-2"></div>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-gutter">
+<!-- Product Card: Uniforms Overview -->
+<div style="cursor:pointer" onclick="window.location.href='contact_us.html#request-quote'" class="group relative bg-pure-white border border-outline-variant/30 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all h-[400px]" data-category="uniforms">
+<div class="absolute inset-0 flex items-center justify-center p-4">
+<img alt="School Uniforms" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJHZhGn0lda8Yjkqds7G0XWyZi0CCSXOVQ57U8U_DmZZLJRN5-dQuttp2dnt9aFlFTqz7H36SQ_f_tg2CNlb5t1Zuis5pSWyjBHM5eZryFxUoo0nsg9RDfKfS6qE8ugb65uPQD1_uvdQo5_iBFOpdg-t-HTcdZgy9ehpUM_76kchNnRMW-oLekCDOMVmUjeVyC1L6gwbNi7PpjZkMDW7g4ZLOmjJLXuY8xOaemQxCcOYtTAPeKxXj9D2VDrneRVodB6xjBh7y0MF4">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex flex-col justify-end p-6 pointer-events-none">
+<span class="font-label-caps text-on-tertiary-container text-[12px] mb-1 uppercase drop-shadow-md">Uniforms Category</span>
+<h3 class="font-card-title text-white mb-2 drop-shadow-md">School &amp; College Uniforms</h3>
+<p class="text-[14px] text-white/90 line-clamp-2 mb-3 drop-shadow-sm">Durable and tailored professional clothing for diverse workforces.</p>
+<div class="flex justify-between items-center border-t border-white/20 pt-3 pointer-events-auto">
+<span class="font-label-caps text-white text-[12px]">Request a Quote</span>
+<span class="material-symbols-outlined text-white text-[20px]">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Product Card: Additional Industrial 1 -->
+<div style="cursor:pointer" onclick="window.location.href='contact_us.html#request-quote'" class="group relative bg-pure-white border border-outline-variant/30 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all h-[400px]" data-category="uniforms">
+<div class="absolute inset-0 flex items-center justify-center p-4">
+<img alt="Manufacturing Area" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcDO3K_b_hI3E7bmjgmVeBHccwPqzj4SFcJCTtAf0WxOrew-QDFVc7wcex6qrP1yxiuxJ6dqL4eEjFbSVV85B64C0f6wMRZYzC7WjwSSgahmBbQQ-1f7knHD2_P-DsgiVLXh05tWE2oI7k-Uz43cqLeKsUnM9ffoK4-LHPCTECpt0ewIl2_vqjRmHVvPYVd8NCEE4CIc-GnJgGH9Sikinyxmf3OSsQppbl7yrZEpRFEs6VOk1-8SdNf8iTWaFETfkCQR1EAcHyOLs">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex flex-col justify-end p-6 pointer-events-none">
+<span class="font-label-caps text-on-tertiary-container text-[12px] mb-1 uppercase drop-shadow-md">Facility Management</span>
+<h3 class="font-card-title text-white mb-2 drop-shadow-md">Corporate Uniforms</h3>
+<p class="text-[14px] text-white/90 line-clamp-2 mb-3 drop-shadow-sm">Centralized distribution for all required protective textiles.</p>
+<div class="flex justify-between items-center border-t border-white/20 pt-3 pointer-events-auto">
+<span class="font-label-caps text-white text-[12px]">Request a Quote</span>
+<span class="material-symbols-outlined text-white text-[20px]">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Product Card: Hospital Scrubs -->
+<div style="cursor:pointer" onclick="window.location.href='contact_us.html#request-quote'" class="group relative bg-pure-white border border-outline-variant/30 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all h-[400px]" data-category="uniforms">
+<div class="absolute inset-0 flex items-center justify-center p-4">
+<img alt="Hospital Scrubs" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKume3fNp4Tf_0_kMDML0pbHnB0OnFCK76X9FtXrK7H3EO-w2kGHTtoZv-rXZGSygAwBQ2DlsgH1WnZAy36lMr9BQQdLk5Dnh99lU19QoHdEO6JcwQQzg3_9qCrt7EgW4C8ri871gT0n1U_fE4dbH0n6uiWSauZMGDQ6EuavDZmbSiU_yyxC5yJ-mTTWwXpl_shQGjzKXQxLCCSAJDX5sdhJmql4O75IGB_2kIRW7iQP8phAfDY0cLgvjh0QL5lc8J7eTrmZjcN7A">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex flex-col justify-end p-6 pointer-events-none">
+<span class="font-label-caps text-on-tertiary-container text-[12px] mb-1 uppercase drop-shadow-md">MEDICAL &amp; HEALTHCARE</span>
+<h3 class="font-card-title text-white mb-2 drop-shadow-md">Hospital Scrubs</h3>
+<p class="text-[14px] text-white/90 line-clamp-2 mb-3 drop-shadow-sm">Comfort-forward medical scrubs with antimicrobial fabric technology, designed for durability in high-demand clinical environments.</p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="bg-white/20 backdrop-blur-sm text-white px-2 py-0.5 rounded text-[10px] font-bold uppercase">Antimicrobial</span>
+<span class="bg-white/20 backdrop-blur-sm text-white px-2 py-0.5 rounded text-[10px] font-bold uppercase">Comfort Fit</span>
+<span class="bg-white/20 backdrop-blur-sm text-white px-2 py-0.5 rounded text-[10px] font-bold uppercase">High-Durability</span>
+</div>
+<div class="flex justify-between items-center border-t border-white/20 pt-3 pointer-events-auto">
+<span class="font-label-caps text-white text-[12px]">Request a Quote</span>
+<span class="material-symbols-outlined text-white text-[20px]">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Product Card: Safety Gear Uniforms -->
+<div style="cursor:pointer" onclick="window.location.href='contact_us.html#request-quote'" class="group relative bg-pure-white border border-outline-variant/30 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all h-[400px]" data-category="uniforms">
+<div class="absolute inset-0 flex items-center justify-center p-4">
+<img alt="Safety Gear Uniforms" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXJmJ8_wV34m3Mr8lcYxTw76mJdKzymGH6vRWvcVd1HA6ltoZq6mY0lPKd-sp7PvmZHYjnL3vKDaEz2Lg9qOn6GXjLjbE3bxcl7BdBQjgvcIZW6qVT6CtrlFvUrIBSukdhzZA8W7d-cQCZgF1Ar9dNgViZxaXJR-d0Vjjx-HcsPGDpFrAYFlfajBgCo2TkLYftmePWT0Sa1snQ9larUVy9UcgQiGlluRGe1pkqnHQJzpuxkC2MADSjn5dIDNJIbK61YHbQhkCWl-w">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex flex-col justify-end p-6 pointer-events-none">
+<span class="font-label-caps text-on-tertiary-container text-[12px] mb-1 uppercase drop-shadow-md">INDUSTRIAL SAFETY</span>
+<h3 class="font-card-title text-white mb-2 drop-shadow-md">Safety Gear Uniforms</h3>
+<p class="text-[14px] text-white/90 line-clamp-2 mb-3 drop-shadow-sm">High-visibility industrial workwear with integrated reflective safety strips, engineered for maximum reliability in heavy manufacturing zones.</p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="bg-white/20 backdrop-blur-sm text-white px-2 py-0.5 rounded text-[10px] font-bold uppercase">Hi-Visibility</span>
+<span class="bg-white/20 backdrop-blur-sm text-white px-2 py-0.5 rounded text-[10px] font-bold uppercase">Triple-Stitched</span>
+<span class="bg-white/20 backdrop-blur-sm text-white px-2 py-0.5 rounded text-[10px] font-bold uppercase">Industrial-Grade</span>
+</div>
+<div class="flex justify-between items-center border-t border-white/20 pt-3 pointer-events-auto">
+<span class="font-label-caps text-white text-[12px]">Request a Quote</span>
+<span class="material-symbols-outlined text-white text-[20px]">arrow_forward</span>
+</div>
+</div>
+</div></div>
+</div>
+<!-- Category: Lint-Free -->
+<div class="category-section" data-category="lint-free" id="section-lint-free">
+<div class="flex items-center gap-6 mb-12">
+<span class="font-hero-lg text-primary/10 select-none">04</span>
+<div>
+<h2 class="font-section-title text-primary uppercase">Lint-Free Rolls</h2>
+<div class="h-1 w-24 bg-primary mt-2"></div>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-gutter">
+<!-- Product Card: Lint-Free Roll 1 -->
+<div style="cursor:pointer" onclick="window.location.href='contact_us.html#request-quote'" class="group relative bg-pure-white border border-outline-variant/30 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all h-[400px]" data-category="lint-free">
+<div class="absolute inset-0 flex items-center justify-center p-4">
+<img alt="Electronics Roll" class="w-full h-full group-hover:scale-105 transition-transform duration-500 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWo2NWCf9e8GeXucE-WzeNCa4OxS3y2srUVknUmCLVpW82BxQ1M7wYG5mfDPcoi4mrEQ9ecsfjE-oSv0yXApU3znvlSD1lBT3hZY8pmLHZmOU8FFAkLIYtrhrP-Qq84wHuGOzdZ7B6PLMxRPmeef00YXOJuGzdXKOisVLGktPEJ_D70SvnFtZlbv6twq9fcj8QU7kS_N3lzXrT8Nrfdkaq_6iNHlB65VRT1mr2XAWtwwpcEaS68uVB0MRYzA4IkwLYBctp6e6mW4c">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex flex-col justify-end p-6 pointer-events-none">
+<span class="font-label-caps text-on-tertiary-container text-[12px] mb-1 uppercase drop-shadow-md">Lint-Free Category</span>
+<h3 class="font-card-title text-white mb-2 drop-shadow-md">Electronics Roll</h3>
+<p class="text-[14px] text-white/90 line-clamp-2 mb-3 drop-shadow-sm">Certified zero-lint fabric for ultra-delicate electronic components.</p>
+<div class="flex justify-between items-center border-t border-white/20 pt-3 pointer-events-auto">
+<span class="font-label-caps text-white text-[12px]">Request a Quote</span>
+<span class="material-symbols-outlined text-white text-[20px]">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Product Card: Lint-Free Roll 2 -->
+<div style="cursor:pointer" onclick="window.location.href='contact_us.html#request-quote'" class="group relative bg-pure-white border border-outline-variant/30 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all h-[400px]" data-category="lint-free">
+<div class="absolute inset-0 flex items-center justify-center p-4">
+<img alt="Technical Roll" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxF5QJLNmA5l2QSDok73aZYydndhTqtSxH8gCyzv1R9l2fiocIcunxp0GP3CtMr23d28886XPdRFcI4IGMH9tMP4gSESjtSsqZAh0pMPloukA05j2YMXnkxETp1HP56iLMTHlzD9FK7jF37QKoP6UR6_iaHu0w-Ar5lwKCuQzyECM5rcGuXvG6_JNix-JCZePqJq048z7RUdvF86I0asDVtVyQz7Sw2v9HspCk3KhLxGF3yXYAaTqdCGegUuKYbiKAzcaAScUV0XA">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex flex-col justify-end p-6 pointer-events-none">
+<span class="font-label-caps text-on-tertiary-container text-[12px] mb-1 uppercase drop-shadow-md">Lint-Free Category</span>
+<h3 class="font-card-title text-white mb-2 drop-shadow-md">Industrial Roll</h3>
+<p class="text-[14px] text-white/90 line-clamp-2 mb-3 drop-shadow-sm">High-performance absorbency for cleanroom surface preparation.</p>
+<div class="flex justify-between items-center border-t border-white/20 pt-3 pointer-events-auto">
+<span class="font-label-caps text-white text-[12px]">Request a Quote</span>
+<span class="material-symbols-outlined text-white text-[20px]">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Product Card: Lint-Free Cloths -->
+<div style="cursor:pointer" onclick="window.location.href='contact_us.html#request-quote'" class="group relative bg-pure-white border border-outline-variant/30 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all h-[400px]" data-category="lint-free">
+<div class="absolute inset-0 flex items-center justify-center p-4">
+<img alt="Lint-Free Cloths" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA62xsJ9wSpC2-19Cx7IigjcL2eCpZCLqMkaKYZzI0hhEMQT8qeoZQexP23UVl5b1mSl9F216HO-OSBow7rcKDlTESYusrv3nv6GcFc2g0cFM9op3Doi6SQsbO-vN7pLOFgnxEvmn1qA4B26QLuS6z6iSGI5qYOrw1e2qOzk2eM-3FZnrCgvMZ6Ql8kAWCXv1-uMCEeVdf4m0WKvFrv7EA-2a7sfeguKd4uPrf3mBLlWW1ys0KCrmJbACEdb6bxO89cAEb_37LErZk">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex flex-col justify-end p-6 pointer-events-none">
+<span class="font-label-caps text-on-tertiary-container text-[12px] mb-1 uppercase drop-shadow-md">LINT-FREE CATEGORY</span>
+<h3 class="font-card-title text-white mb-2 drop-shadow-md">Lint-Free Cloths</h3>
+<p class="text-[14px] text-white/90 line-clamp-2 mb-3 drop-shadow-sm">Precision-engineered microfiber towels for sensitive surface cleaning and particle removal in ISO-rated facilities.</p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="bg-white/20 backdrop-blur-sm text-white px-2 py-0.5 rounded text-[10px] font-bold uppercase">High Absorbency</span>
+<span class="bg-white/20 backdrop-blur-sm text-white px-2 py-0.5 rounded text-[10px] font-bold uppercase">Zero Shedding</span>
+<span class="bg-white/20 backdrop-blur-sm text-white px-2 py-0.5 rounded text-[10px] font-bold uppercase">Chemical Resistant</span>
+</div>
+<div class="flex justify-between items-center border-t border-white/20 pt-3 pointer-events-auto">
+<span class="font-label-caps text-white text-[12px]">Request a Quote</span>
+<span class="material-symbols-outlined text-white text-[20px]">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Product Card: Customizable Garments -->
+<div style="cursor:pointer" onclick="window.location.href='contact_us.html#request-quote'" class="group relative bg-pure-white border border-outline-variant/30 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all h-[400px]" data-category="lint-free">
+<div class="absolute inset-0 flex items-center justify-center p-4">
+<img alt="Customizable Garments" class="w-full h-full group-hover:scale-105 transition-transform duration-500 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYfi8VHSZFzzA-a1qBNpHkIYRxBw3HrfCJu3j4vh10y-BAUUpc8PthKHU7sqnmXeMO6HJArFF5aGW9-MLdgVb08SskaKDlxL526RRV0rJbBEI1y5J9-1bu2erBk6bHTu65evMk84InpNr0QhI7356j0ZzFfSpGCXz5JqUPRSg9HunPRkTPLEoBU3_o6IWug1MMgj-cel4o2g2S9gvwusB-06zBjoC5gBz4KG9opnPK54EG-BWFTC2jVo9jv_Tgu92rAaUqMMa-M5k">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex flex-col justify-end p-6 pointer-events-none">
+<span class="font-label-caps text-on-tertiary-container text-[12px] mb-1 uppercase drop-shadow-md">LINT-FREE CATEGORY</span>
+<h3 class="font-card-title text-white mb-2 drop-shadow-md">Customizable Garments</h3>
+<p class="text-[14px] text-white/90 line-clamp-2 mb-3 drop-shadow-sm">Specialized lint-free apparel tailored to facility specifications for cleanroom, pharmaceutical, and electronic assembly.</p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="bg-white/20 backdrop-blur-sm text-white px-2 py-0.5 rounded text-[10px] font-bold uppercase">Static Dissipative</span>
+<span class="bg-white/20 backdrop-blur-sm text-white px-2 py-0.5 rounded text-[10px] font-bold uppercase">Tailored Fit</span>
+<span class="bg-white/20 backdrop-blur-sm text-white px-2 py-0.5 rounded text-[10px] font-bold uppercase">Breathable Fabric</span>
+</div>
+<div class="flex justify-between items-center border-t border-white/20 pt-3 pointer-events-auto">
+<span class="font-label-caps text-white text-[12px]">Request a Quote</span>
+<span class="material-symbols-outlined text-white text-[20px]">arrow_forward</span>
+</div>
+</div>
+</div></div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-primary py-section-gap-desktop border-t border-primary-container">
+<div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="flex flex-col lg:flex-row justify-between gap-12 lg:gap-20 mb-16">
+<!-- Brand Column -->
+<div class="space-y-6 lg:w-2/5">
+<a href="home.html" style="cursor:pointer;display:inline-block"><span class="font-section-title text-4xl font-extrabold text-on-primary tracking-tight">Fortitude Fabrics</span></a>
+<p class="font-body-small text-on-primary/70 leading-relaxed">Precision-engineered technical textiles for India's high-growth industrial sectors. Manufactured in Telangana, serving the world.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center hover:bg-on-tertiary-container transition-colors" href="#"><span class="material-symbols-outlined text-on-primary">hub</span></a>
+<a class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center hover:bg-on-tertiary-container transition-colors" href="#"><span class="material-symbols-outlined text-on-primary">group</span></a>
+</div>
+</div>
+<!-- Resources -->
+<div class="flex flex-col gap-4 lg:w-1/5">
+<h4 class="font-label-caps text-on-tertiary-container mb-4">RESOURCES</h4>
+<a class="font-body-small text-on-primary opacity-70 hover:opacity-100 hover:translate-x-1 transition-all" href="home.html">Home</a>
+<a class="font-body-small text-on-primary opacity-70 hover:opacity-100 hover:translate-x-1 transition-all" href="product_page.html">Products</a>
+<a class="font-body-small text-on-primary opacity-70 hover:opacity-100 hover:translate-x-1 transition-all" href="about_us.html">About Us</a>
+<a class="font-body-small text-on-primary opacity-70 hover:opacity-100 hover:translate-x-1 transition-all" href="contact_us.html">Contact Us</a>
+<a class="font-body-small text-on-primary opacity-70 hover:opacity-100 hover:translate-x-1 transition-all" href="blog.html">Blog Posts</a>
+</div>
+
+<!-- Contact -->
+<div class="flex flex-col gap-4 lg:w-2/5">
+<h4 class="font-label-caps text-on-tertiary-container mb-4">CONTACT</h4>
+<div class="space-y-4">
+<div class="flex items-start gap-2"><span class="material-symbols-outlined text-on-primary/70 text-sm mt-1">call</span><div><a href="tel:+919490255858" class="font-body-small text-on-primary opacity-70 hover:opacity-100 transition-opacity block">+91 94902 55858</a><p class="text-[12px] text-on-primary/50">Mon–Fri: 8:00 AM – 8:00 PM | Sat: 9:00 AM – 7:00 PM</p></div></div>
+<div class="flex items-start gap-2"><span class="material-symbols-outlined text-on-primary/70 text-sm mt-1">mail</span><div><a href="mailto:business@fortitudefabric.com" class="font-body-small text-on-primary opacity-70 hover:opacity-100 transition-opacity">business@fortitudefabric.com</a></div></div>
+<div class="flex items-start gap-2"><span class="material-symbols-outlined text-on-primary/70 text-sm mt-1">location_on</span><div><p class="font-body-small text-on-primary opacity-70">Wyra, Khammam, Telangana, India</p></div></div>
+<div class="flex items-start gap-2"><span class="material-symbols-outlined text-on-primary/70 text-sm mt-1">language</span><a href="https://www.fortitudefabric.com" target="_blank" rel="noopener noreferrer" class="font-body-small text-on-primary opacity-70 hover:opacity-100 transition-opacity">www.fortitudefabric.com</a></div>
+</div>
+</div>
+</div>
+<div class="pt-8 border-t border-primary-container flex flex-col md:flex-row justify-between items-center gap-6">
+<p class="text-on-primary/50 text-[14px]">© 2024 Fortitude Fabrics. All rights reserved. Precision Manufacturing.</p>
+
+</div>
+</div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+function scrollToSection(id) {
+    const element = document.getElementById(id);
+    if (element) {
+        const offset = 140;
+        const bodyRect = document.body.getBoundingClientRect().top;
+        const elementRect = element.getBoundingClientRect().top;
+        const elementPosition = elementRect - bodyRect;
+        const offsetPosition = elementPosition - offset;
+
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+        });
+    }
+}
+
+window.addEventListener('scroll', () => {
+    const sections = document.querySelectorAll('.category-section');
+    const navButtons = document.querySelectorAll('.filter-btn');
+    const offset = 140;
+    let current = '';
+
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (window.pageYOffset >= sectionTop - offset - 10) {
+            current = section.getAttribute('data-category');
+        }
+    });
+
+    navButtons.forEach(btn => {
+        btn.classList.remove('border-primary', 'text-primary');
+        btn.classList.add('border-transparent', 'text-slate-muted');
+        if (btn.getAttribute('data-filter') === current || (current === 'woven' && btn.getAttribute('data-filter') === 'all')) {
+            btn.classList.remove('border-transparent', 'text-slate-muted');
+            btn.classList.add('border-primary', 'text-primary');
+        }
+    });
+});
+
+    // Mobile Menu Toggle Logic
+    document.addEventListener("DOMContentLoaded", () => {
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const line1 = document.getElementById('hamburger-line-1');
+        const line2 = document.getElementById('hamburger-line-2');
+        const line3 = document.getElementById('hamburger-line-3');
+
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                const isExpanded = !mobileMenu.classList.contains('translate-x-full');
+                if (isExpanded) {
+                    // Close
+                    mobileMenu.classList.add('translate-x-full');
+                    line1.classList.remove('rotate-45', 'translate-y-2');
+                    line2.classList.remove('opacity-0');
+                    line3.classList.remove('-rotate-45', '-translate-y-2');
+                    document.body.style.overflow = '';
+                } else {
+                    // Open
+                    mobileMenu.classList.remove('translate-x-full');
+                    line1.classList.add('rotate-45', 'translate-y-2');
+                    line2.classList.add('opacity-0');
+                    line3.classList.add('-rotate-45', '-translate-y-2');
+                    document.body.style.overflow = 'hidden'; // prevent background scrolling
+                }
+            });
+        }
+    });
+</script>
+
+
+
+
+<!-- Mobile Menu Overlay -->
+<div id="mobile-menu" class="fixed inset-0 bg-pure-white z-40 transform translate-x-full transition-transform duration-300 pt-[88px] px-margin-mobile overflow-y-auto pb-10">
+    <nav class="flex flex-col gap-6 pt-10">
+        <a href="home.html" class="font-section-title text-2xl text-primary border-b border-outline-variant/30 pb-4">Home</a>
+        <a href="product_page.html" class="font-section-title text-2xl text-primary border-b border-outline-variant/30 pb-4">Products</a>
+        <a href="blog.html" class="font-section-title text-2xl text-primary border-b border-outline-variant/30 pb-4">Blog</a>
+        <a href="about_us.html" class="font-section-title text-2xl text-primary border-b border-outline-variant/30 pb-4">About Us</a>
+        <a href="contact_us.html" class="font-section-title text-2xl text-primary border-b border-outline-variant/30 pb-4">Contact Us</a>
+        <button onclick="window.location.href='contact_us.html#request-quote'" class="mt-8 bg-primary text-on-primary px-8 py-4 rounded-full font-label-caps text-label-caps shadow-md w-full active:scale-95 transition-all">Request a Quote</button>
+    </nav>
+</div>
+
+</body></html>
