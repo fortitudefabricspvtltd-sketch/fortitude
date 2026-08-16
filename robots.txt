@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /admin.html
+Disallow: /admin_login.html
+
+Sitemap: https://www.fortitudefabric.com/sitemap.xml

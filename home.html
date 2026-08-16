@@ -1,6 +1,49 @@
 <!DOCTYPE html><html class="scroll-smooth" lang="en"><head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+<meta name="theme-color" content="#002435">
+<link rel="canonical" href="https://www.fortitudefabric.com/">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Fortitude Fabrics">
+<meta property="og:url" content="https://www.fortitudefabric.com/">
+<meta property="og:description" content="Fortitude Fabrics manufactures engineered protective wear and technical textiles — woven and non-woven coveralls, gloves, head caps and shoe covers — for pharma, food, electronics and industrial plants across India.">
+<meta property="og:image" content="https://www.fortitudefabric.com/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:description" content="Fortitude Fabrics manufactures engineered protective wear and technical textiles — woven and non-woven coveralls, gloves, head caps and shoe covers — for pharma, food, electronics and industrial plants across India.">
+<meta name="twitter:image" content="https://www.fortitudefabric.com/assets/og-image.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Fortitude Fabrics Pvt Ltd",
+  "url": "https://www.fortitudefabric.com/",
+  "logo": "https://www.fortitudefabric.com/assets/fortitude-logo.png",
+  "image": "https://www.fortitudefabric.com/assets/og-image.png",
+  "description": "Manufacturer of engineered protective wear and technical textiles for controlled environments, industrial plants and safety-critical sectors.",
+  "email": "business@fortitudefabric.com",
+  "telephone": "+91-94902-55858",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Wyra",
+    "addressRegion": "Telangana",
+    "addressCountry": "IN"
+  },
+  "openingHoursSpecification": [
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "20:00"},
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "19:00"}
+  ]
+}
+</script>
+<meta property="og:title" content="Fortitude Fabrics | Engineered for Demanding Environments">
+<meta name="twitter:title" content="Fortitude Fabrics | Engineered for Demanding Environments">
+<meta name="description" content="Fortitude Fabrics manufactures engineered protective wear and technical textiles — woven and non-woven coveralls, gloves, head caps and shoe covers — for pharma, food, electronics and industrial plants across India.">
 <title>Fortitude Fabrics | Engineered for Demanding Environments</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700;800&amp;display=swap" rel="stylesheet">
@@ -126,13 +169,30 @@
             box-shadow: 0 0 0 4px rgba(82, 172, 195, 0.2);
         }
     </style>
+<style id="ff-clients-style">
+/* Client logo marquee — two identical halves, translated exactly -50% for a
+   seamless loop. Spacing lives on the items (not flex gap) so the halves stay
+   exactly equal in width. */
+.ff-marquee{position:relative;overflow:hidden;
+  -webkit-mask-image:linear-gradient(to right,transparent 0,#000 6%,#000 94%,transparent 100%);
+  mask-image:linear-gradient(to right,transparent 0,#000 6%,#000 94%,transparent 100%);}
+.ff-marquee__track{display:flex;width:max-content;animation:ff-scroll 40s linear infinite;}
+.ff-marquee__item{flex:0 0 auto;margin-right:2rem;}
+.ff-marquee:hover .ff-marquee__track,
+.ff-marquee:focus-within .ff-marquee__track{animation-play-state:paused;}
+@keyframes ff-scroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+@media (prefers-reduced-motion:reduce){
+  .ff-marquee__track{animation:none;}
+  .ff-marquee{overflow-x:auto;-webkit-mask-image:none;mask-image:none;}
+}
+</style>
 </head>
 <body class="bg-background font-body-main text-primary overflow-x-hidden">
 <!-- Header Section -->
 <header class="fixed top-0 w-full h-[88px] z-50 transition-all duration-300 bg-pure-white border-b border-outline-variant" id="top-nav">
 <div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop w-full max-w-[1440px] mx-auto h-full">
 <div class="font-section-title text-[28px] font-extrabold text-primary tracking-tight">
-<img alt="Fortitude Fabrics Logo" class="h-[86px] w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIx6Lqzh1DtqWkUuyqgtDrcOcLuN8SVvq5FvgfxwnyLE544ar4Ot6GWM7mzonvRuA2__pBooqXwkgmKKjMuK_FMYzC7WsQKwVrySwF1pGM02LTMNsww2c4sQKPqyrbYUVxpfCVF9Npf6xjXumaAh7wGuEMnfCMmY7QrMGM5YVNqXNwKUycNnQQFFfvfPYY3Ogg6IE3oGzTiNfkiqLbgCvCByogqUXHmQ1Gl3eIgZyIIoi3NwJ0WFqJcw29oxfYf1oP9xfs6DPtiX4" style="cursor:pointer" onclick="window.location.href='home.html'">
+<img alt="Fortitude Fabrics Logo" class="h-[86px] w-auto object-contain" src="assets/fortitude-logo.png" style="cursor:pointer" onclick="window.location.href='home.html'">
 </div>
 <nav class="hidden md:flex items-center gap-8 h-full">
 <a class="font-body-small text-body-small text-primary hover:opacity-100 hover:scale-[1.02] transition-all border-b-2 border-primary pb-1" href="home.html">Home</a>
@@ -454,6 +514,26 @@
 <p class="text-body-small opacity-60">Full batch records maintained for industry accountability.</p>
 </div>
 </div>
+</div>
+</div>
+</section>
+<!-- Our Clients -->
+<section aria-labelledby="clients-heading" class="py-section-gap-desktop bg-surface-container-low border-y border-outline-variant/40">
+<div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop text-center mb-12">
+<span class="font-label-caps text-on-primary bg-primary rounded-xl px-4 py-2 inline-block mb-4">OUR CLIENTS</span>
+<h2 class="font-section-title text-section-title text-primary" id="clients-heading">Trusted by Industry Leaders</h2>
+<p class="text-body-main text-slate-muted mt-4 max-w-2xl mx-auto">Supplying protective wear and technical textiles to manufacturers and exporters across seafood, agri-export and industrial sectors.</p>
+</div>
+<div class="ff-marquee">
+<div class="ff-marquee__track">
+<div class="ff-marquee__item"><img src="assets/stickh-techh.png" alt="Stickh Techh Industry" loading="lazy" decoding="async" width="440" height="200" class="h-[104px] w-[229px] object-contain rounded-2xl bg-white border border-outline-variant/40 shadow-sm"></div>
+<div class="ff-marquee__item"><img src="assets/green-asia.png" alt="Green Asia Impex Pvt Ltd" loading="lazy" decoding="async" width="440" height="200" class="h-[104px] w-[229px] object-contain rounded-2xl bg-white border border-outline-variant/40 shadow-sm"></div>
+<div class="ff-marquee__item"><img src="assets/aadhya-seafoods.png" alt="Aadhya Sea Foods Private Limited" loading="lazy" decoding="async" width="440" height="200" class="h-[104px] w-[229px] object-contain rounded-2xl bg-white border border-outline-variant/40 shadow-sm"></div>
+<div class="ff-marquee__item"><img src="assets/avr-marines.png" alt="AVR Marines Pvt Ltd" loading="lazy" decoding="async" width="440" height="200" class="h-[104px] w-[229px] object-contain rounded-2xl bg-white border border-outline-variant/40 shadow-sm"></div>
+<div class="ff-marquee__item"><img src="assets/stickh-techh.png" alt="" aria-hidden="true" loading="lazy" decoding="async" width="440" height="200" class="h-[104px] w-[229px] object-contain rounded-2xl bg-white border border-outline-variant/40 shadow-sm"></div>
+<div class="ff-marquee__item"><img src="assets/green-asia.png" alt="" aria-hidden="true" loading="lazy" decoding="async" width="440" height="200" class="h-[104px] w-[229px] object-contain rounded-2xl bg-white border border-outline-variant/40 shadow-sm"></div>
+<div class="ff-marquee__item"><img src="assets/aadhya-seafoods.png" alt="" aria-hidden="true" loading="lazy" decoding="async" width="440" height="200" class="h-[104px] w-[229px] object-contain rounded-2xl bg-white border border-outline-variant/40 shadow-sm"></div>
+<div class="ff-marquee__item"><img src="assets/avr-marines.png" alt="" aria-hidden="true" loading="lazy" decoding="async" width="440" height="200" class="h-[104px] w-[229px] object-contain rounded-2xl bg-white border border-outline-variant/40 shadow-sm"></div>
 </div>
 </div>
 </section>
