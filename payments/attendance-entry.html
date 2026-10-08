@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Add Attendance | Fortitude Fabrics</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#002435">
+  <link rel="icon" href="../assets/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="inner">
+      <a class="brand" href="../home.html">
+        <img src="../assets/fortitude-logo.png" alt="Fortitude Fabrics">
+        <span>Attendance Log<small>Admin &middot; Add Attendance</small></span>
+      </a>
+      <nav class="nav">
+        <a href="entry.html"><span class="material-symbols-outlined">add_card</span>Add Payment</a>
+        <a href="admin.html"><span class="material-symbols-outlined">payments</span>Payments</a>
+        <a href="attendance-entry.html" class="active"><span class="material-symbols-outlined">person_add</span>Add Attendance</a>
+        <a href="attendance.html"><span class="material-symbols-outlined">fact_check</span>Attendance</a>
+        <a href="#" id="logoutLink" class="nav-danger"><span class="material-symbols-outlined">logout</span>Log out</a>
+      </nav>
+    </div>
+  </div>
+
+  <div class="container narrow">
+
+    <div id="formMsg"></div>
+
+    <div class="panel" id="entryPanel" hidden>
+      <div class="panel-head">Attendance &amp; Stitching Entry</div>
+      <div class="panel-body">
+        <form id="attForm" novalidate autocomplete="off">
+
+          <div class="two-col">
+            <div class="form-row">
+              <label for="date">Date <span class="req">*</span></label>
+              <input type="text" id="date" name="date" placeholder="DD/MM/YYYY" inputmode="numeric" maxlength="10">
+              <div class="hint">Format: DD/MM/YYYY</div>
+              <div class="field-error"></div>
+            </div>
+            <div class="form-row">
+              <label for="status">Attendance <span class="req">*</span></label>
+              <select id="status" name="status">
+                <option value="P">P &mdash; Present</option>
+                <option value="A">A &mdash; Absent</option>
+              </select>
+              <div class="field-error"></div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <label for="person">Person Name or Worker ID <span class="req">*</span></label>
+            <input type="text" id="person" name="person" placeholder="e.g. Ravi Kumar or W-0001" maxlength="120" list="peopleList">
+            <datalist id="peopleList"></datalist>
+            <div class="hint" id="workerHint">Each person gets a permanent Worker ID (like a roll number) the first time they are saved.</div>
+            <div class="field-error"></div>
+          </div>
+
+          <fieldset class="present-only" id="presentFields">
+            <div class="three-col">
+              <div class="form-row">
+                <label for="timeIn">Time In</label>
+                <input type="time" id="timeIn" name="timeIn">
+                <div class="field-error"></div>
+              </div>
+              <div class="form-row">
+                <label for="timeOut">Time Out</label>
+                <input type="time" id="timeOut" name="timeOut">
+                <div class="field-error"></div>
+              </div>
+              <div class="form-row">
+                <label>Hours</label>
+                <div class="readout" id="hoursOut">&mdash;</div>
+                <div class="hint">Calculated</div>
+              </div>
+            </div>
+
+            <div class="two-col wide-left">
+              <div class="form-row">
+                <label for="item">Item Stitched</label>
+                <input type="text" id="item" name="item" placeholder="e.g. Cotton shirt" maxlength="200" list="itemList">
+                <datalist id="itemList"></datalist>
+                <div class="field-error"></div>
+              </div>
+              <div class="form-row">
+                <label for="qty">Item Quantity</label>
+                <input type="text" id="qty" name="qty" placeholder="e.g. 40" inputmode="numeric" maxlength="7">
+                <div class="field-error"></div>
+              </div>
+            </div>
+          </fieldset>
+
+          <div class="two-col">
+            <div class="form-row">
+              <label for="paid">Paid <span class="req">*</span></label>
+              <select id="paid" name="paid">
+                <option value="N">N &mdash; Not paid yet</option>
+                <option value="Y">Y &mdash; Paid</option>
+              </select>
+              <div class="field-error"></div>
+            </div>
+            <div class="form-row">
+              <label for="frequency">Payment <span class="req">*</span></label>
+              <select id="frequency" name="frequency">
+                <option value="Daily">Daily</option>
+                <option value="Weekly">Weekly</option>
+              </select>
+              <div class="field-error"></div>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary" id="submitBtn"><span class="material-symbols-outlined">save</span>Save Entry</button>
+            <button type="button" class="btn" id="clearBtn">Clear</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Entries saved on this page, so a whole day can be keyed in one go -->
+    <div class="panel" id="savedPanel" hidden>
+      <div class="panel-head">
+        <span>Saved Just Now</span>
+        <a class="btn btn-sm" href="attendance.html">Open Attendance</a>
+      </div>
+      <div class="panel-body">
+        <div class="table-wrap">
+          <table class="data-table responsive">
+            <thead><tr><th>Entry ID</th><th>Worker ID</th><th>Date</th><th>Person</th><th>Att.</th><th class="num">Hours</th><th>Item</th><th class="num">Qty</th><th>Paid</th></tr></thead>
+            <tbody id="savedRows"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer">&copy; <span id="year"></span> Fortitude Fabrics &middot; <a href="../home.html">fortitudefabric.com</a></div>
+
+  <script src="js/common.js"></script>
+  <script src="js/att-common.js"></script>
+  <script src="js/att-entry.js"></script>
+</body>
+</html>

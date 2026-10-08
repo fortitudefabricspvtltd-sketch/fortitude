@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Attendance | Fortitude Fabrics</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#002435">
+  <link rel="icon" href="../assets/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="inner">
+      <a class="brand" href="../home.html">
+        <img src="../assets/fortitude-logo.png" alt="Fortitude Fabrics">
+        <span>Attendance Log<small>Admin &middot; Dashboard</small></span>
+      </a>
+      <nav class="nav">
+        <a href="entry.html"><span class="material-symbols-outlined">add_card</span>Add Payment</a>
+        <a href="admin.html"><span class="material-symbols-outlined">payments</span>Payments</a>
+        <a href="attendance-entry.html"><span class="material-symbols-outlined">person_add</span>Add Attendance</a>
+        <a href="attendance.html" class="active"><span class="material-symbols-outlined">fact_check</span>Attendance</a>
+        <a href="#" id="logoutLink" class="nav-danger"><span class="material-symbols-outlined">logout</span>Log out</a>
+      </nav>
+    </div>
+  </div>
+
+  <div class="container" id="dashView" hidden>
+
+    <h1 class="page-title">Attendance &amp; Stitching Log</h1>
+    <p class="page-sub">Who came in, hours worked, what was stitched, and what is still unpaid.</p>
+
+    <!-- Summary -->
+    <div class="panel">
+      <div class="panel-head">
+        <span>Summary</span>
+        <span class="scope" id="scopeLabel">All records</span>
+      </div>
+      <div class="panel-body">
+        <div class="summary-grid">
+          <div class="stat"><div class="label">Entries</div><div class="value" id="stCount">0</div></div>
+          <div class="stat total"><div class="label">Days Present</div><div class="value" id="stPresent">0</div></div>
+          <div class="stat"><div class="label">Absent</div><div class="value" id="stAbsent">0</div></div>
+          <div class="stat"><div class="label">Hours Worked</div><div class="value" id="stHours">0.00</div></div>
+          <div class="stat"><div class="label">Items Stitched</div><div class="value" id="stQty">0</div></div>
+          <div class="stat"><div class="label">Unpaid Entries</div><div class="value" id="stUnpaid">0</div></div>
+        </div>
+
+        <h4 class="sub">By Person</h4>
+        <div class="table-wrap">
+          <table class="data-table responsive">
+            <thead>
+              <tr><th>Worker ID</th><th>Person Name</th><th class="num">Days Present</th><th class="num">Absent</th><th class="num">Hours Worked</th>
+                <th class="num">Total Quantity</th><th class="num">Unpaid Entries (N)</th><th>Payment</th><th></th></tr>
+            </thead>
+            <tbody id="personRows"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Filters -->
+    <div class="panel">
+      <div class="panel-head">
+        <span>Filters</span>
+        <span class="tools">
+          <button type="button" class="btn btn-sm" data-range="today">Today</button>
+          <button type="button" class="btn btn-sm" data-range="thisWeek">This Week</button>
+          <button type="button" class="btn btn-sm" data-range="lastWeek">Last Week</button>
+          <button type="button" class="btn btn-sm" data-range="thisMonth">This Month</button>
+          <button type="button" class="btn btn-sm" id="clearFilters">Clear Filters</button>
+        </span>
+      </div>
+      <div class="panel-body">
+        <div class="filters">
+          <div class="form-row">
+            <label for="fYear">Year</label>
+            <select id="fYear"><option value="">All</option></select>
+          </div>
+          <div class="form-row">
+            <label for="fMonth">Month</label>
+            <select id="fMonth"><option value="">All</option></select>
+          </div>
+          <div class="form-row">
+            <label for="fDate">Particular Date</label>
+            <input type="text" id="fDate" placeholder="DD/MM/YYYY" maxlength="10" inputmode="numeric">
+          </div>
+          <div class="form-row">
+            <label for="fFrom">From Date</label>
+            <input type="text" id="fFrom" placeholder="DD/MM/YYYY" maxlength="10" inputmode="numeric">
+          </div>
+          <div class="form-row">
+            <label for="fTo">To Date</label>
+            <input type="text" id="fTo" placeholder="DD/MM/YYYY" maxlength="10" inputmode="numeric">
+          </div>
+          <div class="form-row">
+            <label for="fPerson">Person / Worker</label>
+            <select id="fPerson"><option value="">All</option></select>
+          </div>
+          <div class="form-row">
+            <label for="fStatus">Attendance</label>
+            <select id="fStatus">
+              <option value="">All</option>
+              <option value="P">P &mdash; Present</option>
+              <option value="A">A &mdash; Absent</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="fPaid">Paid</label>
+            <select id="fPaid">
+              <option value="">All</option>
+              <option value="Y">Y &mdash; Paid</option>
+              <option value="N">N &mdash; Unpaid</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="fFreq">Payment</label>
+            <select id="fFreq">
+              <option value="">All</option>
+              <option value="Daily">Daily</option>
+              <option value="Weekly">Weekly</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row" style="margin-bottom:0">
+          <label for="fSearch">Search</label>
+          <div class="search-row">
+            <input type="text" id="fSearch" placeholder="Worker ID (e.g. W-0001), name, Entry ID, item or date">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- One worker's summary: shown when the results belong to a single person (search by Worker ID or name) -->
+    <div class="panel" id="workerPanel" hidden>
+      <div class="panel-head">
+        <span>Worker Summary</span>
+        <span class="scope mono" id="wId"></span>
+      </div>
+      <div class="panel-body">
+        <h3 class="worker-name" id="wName"></h3>
+        <div class="summary-grid">
+          <div class="stat total"><div class="label">Days Present</div><div class="value" id="wPresent">0</div></div>
+          <div class="stat"><div class="label">Absent</div><div class="value" id="wAbsent">0</div></div>
+          <div class="stat"><div class="label">Hours Worked</div><div class="value" id="wHours">0.00</div></div>
+          <div class="stat"><div class="label">Items Stitched</div><div class="value" id="wQty">0</div></div>
+          <div class="stat"><div class="label">Unpaid Entries</div><div class="value" id="wUnpaid">0</div></div>
+        </div>
+        <table class="kv" style="margin-top:14px">
+          <tr><th>Payment</th><td id="wFreq"></td></tr>
+          <tr><th>First / Last Entry</th><td id="wRange"></td></tr>
+          <tr><th>Items</th><td id="wItems"></td></tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- Records -->
+    <div class="panel">
+      <div class="panel-head">
+        <span id="tableTitle">Attendance Records</span>
+        <span class="tools">
+          <a class="btn btn-sm btn-primary" href="attendance-entry.html"><span class="material-symbols-outlined">add</span>Add Attendance</a>
+          <button type="button" class="btn btn-sm" id="importBtn"><span class="material-symbols-outlined">upload_file</span>Import Excel</button>
+          <button type="button" class="btn btn-sm" id="exportXlsxBtn"><span class="material-symbols-outlined">download</span>Export Excel</button>
+          <button type="button" class="btn btn-sm" id="exportBtn">Export CSV</button>
+          <button type="button" class="btn btn-sm" id="refreshBtn"><span class="material-symbols-outlined">refresh</span>Refresh</button>
+        </span>
+        <input type="file" id="importFile" accept=".xlsx,.xls" hidden>
+      </div>
+      <div class="panel-body">
+        <div id="dashMsg"></div>
+
+        <div class="bulkbar" id="bulkBar" hidden>
+          <span id="bulkCount">0 selected</span>
+          <button type="button" class="btn btn-sm" id="markPaidBtn"><span class="material-symbols-outlined">check_circle</span>Mark Paid (Y)</button>
+          <button type="button" class="btn btn-sm" id="markUnpaidBtn">Mark Unpaid (N)</button>
+          <button type="button" class="btn btn-sm" id="clearSelBtn">Clear selection</button>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table responsive">
+            <thead>
+              <tr>
+                <th class="check"><input type="checkbox" id="checkAll" title="Select all shown"></th>
+                <th>Sl. No.</th>
+                <th>Entry ID</th>
+                <th>Worker ID</th>
+                <th>Date</th>
+                <th>Person Name</th>
+                <th>Att.</th>
+                <th>Time In</th>
+                <th>Time Out</th>
+                <th class="num">Hours</th>
+                <th>Item Stitched</th>
+                <th class="num">Qty</th>
+                <th>Paid</th>
+                <th>Payment</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="rows"></tbody>
+            <tfoot>
+              <tr>
+                <td colspan="9" class="foot-label">TOTAL</td>
+                <td class="num" data-label="Total Hours" id="footHours">0.00</td>
+                <td></td>
+                <td class="num" data-label="Total Qty" id="footQty">0</td>
+                <td colspan="3"></td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+        <p class="muted" id="rowCount" style="margin:10px 0 0"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== EDIT MODAL ===================== -->
+  <div class="modal-backdrop" id="editModal">
+    <div class="modal">
+      <div class="panel-head">Edit Attendance</div>
+      <div class="panel-body">
+        <div id="editMsg"></div>
+        <form id="editForm" novalidate autocomplete="off">
+          <div class="form-row">
+            <label>Entry ID</label>
+            <input type="text" id="eId" readonly class="mono">
+          </div>
+          <div class="two-col">
+            <div class="form-row">
+              <label for="eDate">Date <span class="req">*</span></label>
+              <input type="text" id="eDate" name="date" placeholder="DD/MM/YYYY" maxlength="10" inputmode="numeric">
+              <div class="field-error"></div>
+            </div>
+            <div class="form-row">
+              <label for="eStatus">Attendance <span class="req">*</span></label>
+              <select id="eStatus" name="status">
+                <option value="P">P &mdash; Present</option>
+                <option value="A">A &mdash; Absent</option>
+              </select>
+              <div class="field-error"></div>
+            </div>
+          </div>
+          <div class="form-row">
+            <label for="ePerson">Person Name or Worker ID <span class="req">*</span></label>
+            <input type="text" id="ePerson" name="person" maxlength="120" list="peopleList">
+            <datalist id="peopleList"></datalist>
+            <div class="field-error"></div>
+          </div>
+          <fieldset class="present-only" id="ePresent">
+            <div class="three-col">
+              <div class="form-row">
+                <label for="eIn">Time In</label>
+                <input type="time" id="eIn" name="timeIn">
+                <div class="field-error"></div>
+              </div>
+              <div class="form-row">
+                <label for="eOut">Time Out</label>
+                <input type="time" id="eOut" name="timeOut">
+                <div class="field-error"></div>
+              </div>
+              <div class="form-row">
+                <label>Hours</label>
+                <div class="readout" id="eHours">&mdash;</div>
+              </div>
+            </div>
+            <div class="two-col wide-left">
+              <div class="form-row">
+                <label for="eItem">Item Stitched</label>
+                <input type="text" id="eItem" name="item" maxlength="200">
+                <div class="field-error"></div>
+              </div>
+              <div class="form-row">
+                <label for="eQty">Item Quantity</label>
+                <input type="text" id="eQty" name="qty" inputmode="numeric" maxlength="7">
+                <div class="field-error"></div>
+              </div>
+            </div>
+          </fieldset>
+          <div class="two-col">
+            <div class="form-row">
+              <label for="ePaid">Paid <span class="req">*</span></label>
+              <select id="ePaid" name="paid">
+                <option value="N">N &mdash; Not paid yet</option>
+                <option value="Y">Y &mdash; Paid</option>
+              </select>
+              <div class="field-error"></div>
+            </div>
+            <div class="form-row">
+              <label for="eFreq">Payment <span class="req">*</span></label>
+              <select id="eFreq" name="frequency">
+                <option value="Daily">Daily</option>
+                <option value="Weekly">Weekly</option>
+              </select>
+              <div class="field-error"></div>
+            </div>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary" id="saveEditBtn">Save Changes</button>
+            <button type="button" class="btn" data-close>Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== DELETE MODAL ===================== -->
+  <div class="modal-backdrop" id="deleteModal">
+    <div class="modal">
+      <div class="panel-head">Delete Entry</div>
+      <div class="panel-body">
+        <p style="margin-top:0">Are you sure you want to delete:</p>
+        <table class="kv">
+          <tr><th>Entry ID</th><td class="mono" id="dId"></td></tr>
+          <tr><th>Date</th><td id="dDate"></td></tr>
+          <tr><th>Person</th><td id="dPerson"></td></tr>
+        </table>
+        <p class="muted">This action will be recorded in the audit log.</p>
+        <div class="form-actions">
+          <button type="button" class="btn" data-close>Cancel</button>
+          <button type="button" class="btn btn-danger" id="confirmDeleteBtn">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== IMPORT MODAL ===================== -->
+  <div class="modal-backdrop" id="importModal">
+    <div class="modal wide">
+      <div class="panel-head">Import from Attendance Log Excel</div>
+      <div class="panel-body">
+        <div id="importMsg"></div>
+        <div class="table-wrap" id="importPreviewWrap">
+          <table class="data-table">
+            <thead>
+              <tr><th>Sl. No.</th><th>Date</th><th>Person / Worker ID</th><th>Att.</th><th>In</th><th>Out</th><th>Item</th><th class="num">Qty</th><th>Paid</th><th>Payment</th></tr>
+            </thead>
+            <tbody id="importRows"></tbody>
+          </table>
+        </div>
+        <div class="form-actions">
+          <button type="button" class="btn btn-primary" id="confirmImportBtn">Import</button>
+          <button type="button" class="btn" data-close>Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">&copy; <span id="year"></span> Fortitude Fabrics &middot; <a href="../home.html">fortitudefabric.com</a></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/att-common.js"></script>
+  <script src="js/att-excel.js"></script>
+  <script src="js/att-admin.js"></script>
+</body>
+</html>

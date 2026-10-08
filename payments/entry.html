@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Payment Entry | Fortitude Fabrics</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#002435">
+  <link rel="icon" href="../assets/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="inner">
+      <a class="brand" href="../home.html">
+        <img src="../assets/fortitude-logo.png" alt="Fortitude Fabrics">
+        <span>Payment Log<small>Admin &middot; Payment Entry</small></span>
+      </a>
+      <nav class="nav">
+        <a href="entry.html" class="active"><span class="material-symbols-outlined">add_card</span>Add Payment</a>
+        <a href="admin.html"><span class="material-symbols-outlined">payments</span>Payments</a>
+        <a href="attendance-entry.html"><span class="material-symbols-outlined">person_add</span>Add Attendance</a>
+        <a href="attendance.html"><span class="material-symbols-outlined">fact_check</span>Attendance</a>
+        <a href="#" id="logoutLink" class="nav-danger"><span class="material-symbols-outlined">logout</span>Log out</a>
+      </nav>
+    </div>
+  </div>
+
+  <div class="container narrow">
+
+    <div id="formMsg"></div>
+
+    <!-- ===== Entry form ===== -->
+    <div class="panel" id="entryPanel" hidden>
+      <div class="panel-head">Payment &amp; Expense Entry</div>
+      <div class="panel-body">
+        <form id="paymentForm" novalidate autocomplete="off">
+
+          <div class="two-col">
+            <div class="form-row">
+              <label for="date">Date <span class="req">*</span></label>
+              <input type="text" id="date" name="date" placeholder="DD/MM/YYYY" inputmode="numeric" maxlength="10">
+              <div class="hint">Format: DD/MM/YYYY</div>
+              <div class="field-error"></div>
+            </div>
+
+            <div class="form-row">
+              <label for="mode">Payment Mode <span class="req">*</span></label>
+              <select id="mode" name="mode">
+                <option value="">-- Select --</option>
+                <option value="Cash">Cash</option>
+                <option value="UPI">UPI</option>
+                <option value="Bank Transfer">Bank Transfer</option>
+              </select>
+              <div class="field-error"></div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <label for="toWhom">To Whom <span class="req">*</span></label>
+            <input type="text" id="toWhom" name="toWhom" placeholder="e.g. ABC Dyes &amp; Chemicals" maxlength="120">
+            <div class="field-error"></div>
+          </div>
+
+          <div class="form-row">
+            <label for="fromWhom">By Whom <span class="req">*</span></label>
+            <input type="text" id="fromWhom" name="fromWhom" placeholder="e.g. Accounts Dept." maxlength="120">
+            <div class="field-error"></div>
+          </div>
+
+          <div class="form-row">
+            <label for="purpose">Purpose <span class="req">*</span></label>
+            <input type="text" id="purpose" name="purpose" placeholder="e.g. Dye purchase, Oct batch" maxlength="200">
+            <div class="field-error"></div>
+          </div>
+
+          <div class="form-row">
+            <label for="source">Source of Funds <span class="opt">(optional)</span></label>
+            <input type="text" id="source" name="source" placeholder="e.g. Working capital" maxlength="120" list="sourceList">
+            <datalist id="sourceList"></datalist>
+            <div class="hint">Spell each source the same way every time so totals group correctly.</div>
+            <div class="field-error"></div>
+          </div>
+
+          <div class="form-row">
+            <label for="amount">Amount (INR) <span class="req">*</span></label>
+            <input type="text" id="amount" name="amount" placeholder="e.g. 12500.00" inputmode="decimal" maxlength="12">
+            <div class="hint" id="amountPreview">Up to 2 decimal places</div>
+            <div class="field-error"></div>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary" id="submitBtn">Add Payment</button>
+            <button type="reset" class="btn" id="clearBtn">Clear</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- ===== Success view ===== -->
+    <div class="panel" id="successPanel" hidden>
+      <div class="panel-head">Payment Added</div>
+      <div class="panel-body">
+        <div class="msg msg-success">&#10004; Payment added successfully.</div>
+        <table class="kv">
+          <tr><th>Payment ID</th><td class="mono" id="sId"></td></tr>
+          <tr><th>Date</th><td id="sDate"></td></tr>
+          <tr><th>To Whom</th><td id="sTo"></td></tr>
+          <tr><th>Source of Funds</th><td id="sSource"></td></tr>
+          <tr><th>Amount</th><td id="sAmount"></td></tr>
+          <tr><th>Payment Mode</th><td id="sMode"></td></tr>
+        </table>
+        <div class="form-actions" style="margin-top:14px">
+          <button type="button" class="btn btn-primary" id="addAnotherBtn">Add Another Payment</button>
+          <a class="btn" id="viewBtn" href="#">View Payment</a>
+          <button type="button" class="btn" id="copyBtn">Copy Payment ID</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer">&copy; <span id="year"></span> Fortitude Fabrics &middot; <a href="../home.html">fortitudefabric.com</a></div>
+
+  <script src="js/common.js"></script>
+  <script src="js/entry.js"></script>
+</body>
+</html>

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Payment Dashboard | Fortitude Fabrics</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#002435">
+  <link rel="icon" href="../assets/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="inner">
+      <a class="brand" href="../home.html">
+        <img src="../assets/fortitude-logo.png" alt="Fortitude Fabrics">
+        <span>Payment Log<small>Admin &middot; Dashboard</small></span>
+      </a>
+      <nav class="nav">
+        <a href="entry.html"><span class="material-symbols-outlined">add_card</span>Add Payment</a>
+        <a href="admin.html" class="active"><span class="material-symbols-outlined">payments</span>Payments</a>
+        <a href="attendance-entry.html"><span class="material-symbols-outlined">person_add</span>Add Attendance</a>
+        <a href="attendance.html"><span class="material-symbols-outlined">fact_check</span>Attendance</a>
+        <a href="#" id="logoutLink" class="nav-danger" hidden><span class="material-symbols-outlined">logout</span>Log out</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- ===================== LOGIN ===================== -->
+  <div class="container narrow" id="loginView">
+    <div class="panel">
+      <div class="panel-head">Admin Login</div>
+      <div class="panel-body">
+        <div id="loginMsg"></div>
+        <form id="loginForm" novalidate>
+          <div class="form-row">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" autocomplete="current-password">
+            <div class="hint" id="loginHint">Password is checked by the server, never stored in this page.</div>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary" id="loginBtn"><span class="material-symbols-outlined">login</span>Log In</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== DASHBOARD ===================== -->
+  <div class="container" id="dashView" hidden>
+
+    <h1 class="page-title">Payment &amp; Expense Log</h1>
+    <p class="page-sub">Every payment made by Fortitude Fabrics, in one place.</p>
+
+    <!-- Summary -->
+    <div class="panel">
+      <div class="panel-head">
+        <span>Summary</span>
+        <span class="scope" id="scopeLabel">All records</span>
+      </div>
+      <div class="panel-body">
+        <div class="summary-grid">
+          <div class="stat"><div class="label">Number of Payments</div><div class="value" id="stCount">0</div></div>
+          <div class="stat total"><div class="label">Total Amount</div><div class="value" id="stTotal">₹0.00</div></div>
+          <div class="stat"><div class="label">Cash</div><div class="value" id="stCash">₹0.00</div></div>
+          <div class="stat"><div class="label">UPI</div><div class="value" id="stUpi">₹0.00</div></div>
+          <div class="stat"><div class="label">Bank Transfer</div><div class="value" id="stBank">₹0.00</div></div>
+        </div>
+
+        <h4 class="sub">By Source of Funds</h4>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead><tr><th>Source of Funds</th><th class="num">Entries</th><th class="num">Total Amount</th></tr></thead>
+            <tbody id="sourceRows"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Filters -->
+    <div class="panel">
+      <div class="panel-head">
+        <span>Filters</span>
+        <button type="button" class="btn btn-sm" id="clearFilters">Clear Filters</button>
+      </div>
+      <div class="panel-body">
+        <div class="filters">
+          <div class="form-row">
+            <label for="fYear">Year</label>
+            <select id="fYear"><option value="">All</option></select>
+          </div>
+          <div class="form-row">
+            <label for="fMonth">Month</label>
+            <select id="fMonth"><option value="">All</option></select>
+          </div>
+          <div class="form-row">
+            <label for="fDate">Particular Date</label>
+            <input type="text" id="fDate" placeholder="DD/MM/YYYY" maxlength="10" inputmode="numeric">
+          </div>
+          <div class="form-row">
+            <label for="fFrom">From Date</label>
+            <input type="text" id="fFrom" placeholder="DD/MM/YYYY" maxlength="10" inputmode="numeric">
+          </div>
+          <div class="form-row">
+            <label for="fTo">To Date</label>
+            <input type="text" id="fTo" placeholder="DD/MM/YYYY" maxlength="10" inputmode="numeric">
+          </div>
+          <div class="form-row">
+            <label for="fMode">Payment Mode</label>
+            <select id="fMode">
+              <option value="">All</option>
+              <option value="Cash">Cash</option>
+              <option value="UPI">UPI</option>
+              <option value="Bank Transfer">Bank Transfer</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="fSource">Source of Funds</label>
+            <select id="fSource"><option value="">All</option></select>
+          </div>
+        </div>
+        <div class="form-row" style="margin-bottom:0">
+          <label for="fSearch">Search Payments</label>
+          <div class="search-row">
+            <input type="text" id="fSearch" placeholder="Payment ID, To Whom, By Whom, Purpose, Source or Date">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Vendor summary (shown when results belong to one vendor and a search is active) -->
+    <div class="panel" id="vendorPanel" hidden>
+      <div class="panel-head">Vendor Summary</div>
+      <div class="panel-body">
+        <table class="kv">
+          <tr><th>Vendor</th><td id="vName"></td></tr>
+          <tr><th>Total Payments</th><td id="vCount"></td></tr>
+          <tr><th>Total Amount</th><td id="vTotal"></td></tr>
+          <tr><th>Last Payment</th><td id="vLast"></td></tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- Records -->
+    <div class="panel">
+      <div class="panel-head">
+        <span id="tableTitle">Payment Records</span>
+        <span class="tools">
+          <a class="btn btn-sm btn-primary" href="entry.html"><span class="material-symbols-outlined">add</span>Add Payment</a>
+          <button type="button" class="btn btn-sm" id="importBtn"><span class="material-symbols-outlined">upload_file</span>Import Excel</button>
+          <button type="button" class="btn btn-sm" id="exportXlsxBtn"><span class="material-symbols-outlined">download</span>Export Excel</button>
+          <button type="button" class="btn btn-sm" id="exportBtn">Export CSV</button>
+          <button type="button" class="btn btn-sm" id="refreshBtn"><span class="material-symbols-outlined">refresh</span>Refresh</button>
+        </span>
+        <input type="file" id="importFile" accept=".xlsx,.xls" hidden>
+      </div>
+      <div class="panel-body">
+        <div id="dashMsg"></div>
+        <div class="table-wrap">
+          <table class="data-table responsive">
+            <thead>
+              <tr>
+                <th>Sl. No.</th>
+                <th>Payment ID</th>
+                <th>Date</th>
+                <th>To Whom</th>
+                <th>By Whom</th>
+                <th>Purpose</th>
+                <th>Source of Funds</th>
+                <th class="num">Amount (INR)</th>
+                <th>Mode</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="rows"></tbody>
+            <tfoot>
+              <tr>
+                <td colspan="7" class="foot-label">TOTAL</td>
+                <td class="num" data-label="Total" id="footTotal">₹0.00</td>
+                <td colspan="2"></td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+        <p class="muted" id="rowCount" style="margin:10px 0 0"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== EDIT MODAL ===================== -->
+  <div class="modal-backdrop" id="editModal">
+    <div class="modal">
+      <div class="panel-head">Edit Payment</div>
+      <div class="panel-body">
+        <div id="editMsg"></div>
+        <form id="editForm" novalidate autocomplete="off">
+          <div class="form-row">
+            <label>Payment ID</label>
+            <input type="text" id="eId" readonly class="mono">
+            <div class="hint">Payment ID cannot be changed.</div>
+          </div>
+          <div class="two-col">
+            <div class="form-row">
+              <label for="eDate">Date <span class="req">*</span></label>
+              <input type="text" id="eDate" name="date" placeholder="DD/MM/YYYY" maxlength="10" inputmode="numeric">
+              <div class="field-error"></div>
+            </div>
+            <div class="form-row">
+              <label for="eMode">Payment Mode <span class="req">*</span></label>
+              <select id="eMode" name="mode">
+                <option value="Cash">Cash</option>
+                <option value="UPI">UPI</option>
+                <option value="Bank Transfer">Bank Transfer</option>
+              </select>
+              <div class="field-error"></div>
+            </div>
+          </div>
+          <div class="form-row">
+            <label for="eTo">To Whom <span class="req">*</span></label>
+            <input type="text" id="eTo" name="toWhom" maxlength="120">
+            <div class="field-error"></div>
+          </div>
+          <div class="form-row">
+            <label for="eFrom">By Whom <span class="req">*</span></label>
+            <input type="text" id="eFrom" name="fromWhom" maxlength="120">
+            <div class="field-error"></div>
+          </div>
+          <div class="form-row">
+            <label for="ePurpose">Purpose <span class="req">*</span></label>
+            <input type="text" id="ePurpose" name="purpose" maxlength="200">
+            <div class="field-error"></div>
+          </div>
+          <div class="form-row">
+            <label for="eSource">Source of Funds <span class="opt">(optional)</span></label>
+            <input type="text" id="eSource" name="source" maxlength="120" list="sourceList">
+            <datalist id="sourceList"></datalist>
+            <div class="field-error"></div>
+          </div>
+          <div class="form-row">
+            <label for="eAmount">Amount (INR) <span class="req">*</span></label>
+            <input type="text" id="eAmount" name="amount" inputmode="decimal" maxlength="12">
+            <div class="field-error"></div>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary" id="saveEditBtn">Save Changes</button>
+            <button type="button" class="btn" data-close>Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== DELETE MODAL ===================== -->
+  <div class="modal-backdrop" id="deleteModal">
+    <div class="modal">
+      <div class="panel-head">Delete Payment</div>
+      <div class="panel-body">
+        <p style="margin-top:0">Are you sure you want to delete:</p>
+        <table class="kv">
+          <tr><th>Payment ID</th><td class="mono" id="dId"></td></tr>
+          <tr><th>Amount</th><td id="dAmount"></td></tr>
+          <tr><th>To Whom</th><td id="dTo"></td></tr>
+        </table>
+        <p class="muted">This action will be recorded in the audit log.</p>
+        <div class="form-actions">
+          <button type="button" class="btn" data-close>Cancel</button>
+          <button type="button" class="btn btn-danger" id="confirmDeleteBtn">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== IMPORT MODAL ===================== -->
+  <div class="modal-backdrop" id="importModal">
+    <div class="modal wide">
+      <div class="panel-head">Import from Payment Log Excel</div>
+      <div class="panel-body">
+        <div id="importMsg"></div>
+        <div class="table-wrap" id="importPreviewWrap">
+          <table class="data-table">
+            <thead>
+              <tr><th>Sl. No.</th><th>Date</th><th>To Whom</th><th>By Whom</th><th>Purpose</th><th>Source</th><th class="num">Amount</th><th>Mode</th></tr>
+            </thead>
+            <tbody id="importRows"></tbody>
+          </table>
+        </div>
+        <div class="form-actions">
+          <button type="button" class="btn btn-primary" id="confirmImportBtn">Import</button>
+          <button type="button" class="btn" data-close>Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">&copy; <span id="year"></span> Fortitude Fabrics &middot; <a href="../home.html">fortitudefabric.com</a></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/excel.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>
