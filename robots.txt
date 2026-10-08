@@ -2,5 +2,6 @@ User-agent: *
 Allow: /
 Disallow: /admin.html
 Disallow: /admin_login.html
+Disallow: /payments/
 
 Sitemap: https://www.fortitudefabric.com/sitemap.xml

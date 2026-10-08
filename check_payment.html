@@ -1,0 +1,400 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+<meta name="theme-color" content="#002435">
+<title>Check Your Payment | Fortitude Fabrics</title>
+<meta name="description" content="Vendors and partners of Fortitude Fabrics can check the status of their payments using their Payment ID or registered name.">
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://www.fortitudefabric.com/check_payment.html">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error": "#ba1a1a",
+                        "secondary": "#516165",
+                        "background": "#f9f9f6",
+                        "on-tertiary-fixed-variant": "#004e5d",
+                        "surface-container-high": "#e8e8e5",
+                        "surface-variant": "#e2e3e0",
+                        "primary": "#002435",
+                        "tertiary": "#00262e",
+                        "surface-container-low": "#f4f4f1",
+                        "tertiary-fixed": "#adecff",
+                        "on-tertiary": "#ffffff",
+                        "on-surface-variant": "#41484c",
+                        "on-primary": "#ffffff",
+                        "slate-muted": "#5A7080",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-fixed": "#001f26",
+                        "on-secondary-fixed-variant": "#3a494d",
+                        "surface-dim": "#dadad7",
+                        "surface-container-highest": "#e2e3e0",
+                        "on-error-container": "#93000a",
+                        "surface-container": "#eeeeeb",
+                        "primary-container": "#063b52",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed": "#001e2d",
+                        "on-secondary-container": "#57676b",
+                        "primary-fixed-dim": "#a1cce8",
+                        "inverse-primary": "#a1cce8",
+                        "inverse-on-surface": "#f1f1ee",
+                        "inverse-surface": "#2f312f",
+                        "on-tertiary-container": "#52acc3",
+                        "tertiary-fixed-dim": "#7bd3ea",
+                        "primary-fixed": "#c5e7ff",
+                        "on-primary-container": "#7ba5c0",
+                        "on-secondary-fixed": "#0e1e22",
+                        "pure-white": "#FFFFFF",
+                        "tertiary-container": "#003d49",
+                        "secondary-fixed": "#d4e5ea",
+                        "surface-alt": "#EFEFEF",
+                        "on-error": "#ffffff",
+                        "secondary-container": "#d4e5ea",
+                        "secondary-fixed-dim": "#b9c9ce",
+                        "outline": "#72787d",
+                        "surface": "#f9f9f6",
+                        "surface-bright": "#f9f9f6",
+                        "on-surface": "#1a1c1b",
+                        "on-background": "#1a1c1b",
+                        "on-primary-fixed-variant": "#1e4b63",
+                        "surface-tint": "#38637c",
+                        "surface-container-lowest": "#ffffff",
+                        "outline-variant": "#c1c7cd",
+                        "soft-sky": "#B6D7E8"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "24px",
+                        "full": "999px"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "gutter": "24px",
+                        "section-gap-mobile": "64px",
+                        "margin-desktop": "80px",
+                        "section-gap-desktop": "120px",
+                        "margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "hero-lg": ["Nunito Sans"],
+                        "hero-lg-mobile": ["Nunito Sans"],
+                        "card-title": ["Nunito Sans"],
+                        "section-title-mobile": ["Nunito Sans"],
+                        "section-title": ["Nunito Sans"],
+                        "body-main": ["Nunito Sans"],
+                        "body-small": ["Nunito Sans"],
+                        "label-caps": ["Nunito Sans"]
+                    },
+                    "fontSize": {
+                        "hero-lg": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "hero-lg-mobile": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "800"}],
+                        "card-title": ["24px", {"lineHeight": "1.4", "fontWeight": "700"}],
+                        "section-title-mobile": ["32px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                        "section-title": ["48px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "body-main": ["18px", {"lineHeight": "160%", "fontWeight": "400"}],
+                        "body-small": ["16px", {"lineHeight": "150%", "fontWeight": "400"}],
+                        "label-caps": ["14px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .mega-menu {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+        }
+        .mega-menu.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        .active-dot {
+            box-shadow: 0 0 0 4px rgba(82, 172, 195, 0.2);
+        }
+    </style>
+<style id="ff-clients-style">
+/* Client logo marquee — two identical halves, translated exactly -50% for a
+   seamless loop. Spacing lives on the items (not flex gap) so the halves stay
+   exactly equal in width. */
+.ff-marquee{position:relative;overflow:hidden;
+  -webkit-mask-image:linear-gradient(to right,transparent 0,#000 6%,#000 94%,transparent 100%);
+  mask-image:linear-gradient(to right,transparent 0,#000 6%,#000 94%,transparent 100%);}
+.ff-marquee__track{display:flex;width:max-content;animation:ff-scroll 40s linear infinite;}
+.ff-marquee__item{flex:0 0 auto;margin-right:2rem;}
+.ff-marquee:hover .ff-marquee__track,
+.ff-marquee:focus-within .ff-marquee__track{animation-play-state:paused;}
+@keyframes ff-scroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+@media (prefers-reduced-motion:reduce){
+  .ff-marquee__track{animation:none;}
+  .ff-marquee{overflow-x:auto;-webkit-mask-image:none;mask-image:none;}
+}
+</style>
+</head>
+<body class="bg-background font-body-main text-primary overflow-x-hidden">
+<!-- Header Section -->
+<header class="fixed top-0 w-full h-[88px] z-50 transition-all duration-300 bg-pure-white border-b border-outline-variant" id="top-nav">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop w-full max-w-[1440px] mx-auto h-full">
+<div class="font-section-title text-[28px] font-extrabold text-primary tracking-tight">
+<img alt="Fortitude Fabrics Logo" class="h-[86px] w-auto object-contain" src="assets/fortitude-logo.png" style="cursor:pointer" onclick="window.location.href='home.html'">
+</div>
+<nav class="hidden md:flex items-center gap-8 h-full">
+<a class="font-body-small text-body-small text-primary opacity-80 hover:opacity-100 hover:scale-[1.02] transition-all" href="home.html">Home</a>
+<div class="h-full flex items-center relative group/products">
+<a class="font-body-small text-body-small text-primary opacity-80 flex items-center gap-1 hover:opacity-100 transition-all" href="product_page.html" id="products-btn">
+                    Products <span class="material-symbols-outlined text-sm">expand_more</span>
+</a>
+<!-- Mega Menu -->
+<div class="mega-menu absolute top-[88px] left-0 w-[600px] bg-pure-white p-8 rounded-xl shadow-2xl grid grid-cols-1 md:grid-cols-2 gap-8 z-50 opacity-0 invisible pointer-events-none group-hover/products:opacity-100 group-hover/products:visible group-hover/products:pointer-events-auto transition-all duration-200" id="products-menu">
+<div>
+<h4 class="font-label-caps text-label-caps text-on-primary-container mb-4">FABRIC TYPES</h4>
+<ul class="space-y-3">
+<li class=""><a class="text-body-small hover:text-on-tertiary-container transition-colors" href="product_page.html#section-woven">Woven Technical Textiles</a></li>
+<li class=""><a class="text-body-small hover:text-on-tertiary-container transition-colors" href="product_page.html#section-non-woven">Non-Woven Filtration</a></li>
+<li class=""><a class="text-body-small hover:text-on-tertiary-container transition-colors" href="product_page.html#section-woven">Antistatic Materials</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-on-primary-container mb-4">PRODUCTS</h4>
+<ul class="space-y-3">
+<li class=""><a class="text-body-small hover:text-on-tertiary-container transition-colors" href="product_page.html#section-lint-free">Lint-Free Rolls</a></li>
+<li class=""><a class="text-body-small hover:text-on-tertiary-container transition-colors" href="product_page.html#section-uniforms">Cleanroom Uniforms</a></li>
+<li class=""><a class="text-body-small hover:text-on-tertiary-container transition-colors" href="product_page.html#section-woven">Industrial Coveralls</a></li>
+</ul>
+</div>
+</div>
+</div>
+<a class="font-body-small text-body-small text-primary opacity-80 hover:opacity-100 hover:scale-[1.02] transition-all" href="blog.html">Blog</a>
+<a class="font-body-small text-body-small text-primary opacity-80 hover:opacity-100 hover:scale-[1.02] transition-all" href="about_us.html">About Us</a>
+<a class="font-body-small text-body-small text-primary opacity-80 hover:opacity-100 hover:scale-[1.02] transition-all" href="contact_us.html">Contact Us</a>
+<a class="font-body-small text-body-small text-primary opacity-80 hover:opacity-100 hover:scale-[1.02] transition-all border-b-2 border-primary pb-1" href="check_payment.html">Check Payment</a>
+</nav>
+<button onclick="window.location.href='contact_us.html#request-quote'" class="hidden md:block bg-primary text-on-primary px-8 py-3 rounded-full font-label-caps text-label-caps hover:scale-[1.02] active:scale-[0.98] transition-all shadow-md">
+            Request a Quote
+        </button>
+
+<!-- Mobile Menu Toggle Button -->
+<button id="mobile-menu-btn" class="md:hidden flex flex-col justify-center gap-1.5 p-2 z-[60] relative">
+    <span class="w-6 h-0.5 bg-primary transition-all duration-300 transform origin-center" id="hamburger-line-1"></span>
+    <span class="w-6 h-0.5 bg-primary transition-all duration-300 transform origin-center" id="hamburger-line-2"></span>
+    <span class="w-6 h-0.5 bg-primary transition-all duration-300 transform origin-center" id="hamburger-line-3"></span>
+</button>
+
+</div>
+</header>
+
+<main>
+<!-- Page banner -->
+<section class="bg-primary pt-[150px] pb-28 text-on-primary">
+<div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop">
+<span class="inline-block px-4 py-1.5 rounded-full bg-on-tertiary-container/20 text-on-tertiary-container font-label-caps text-[12px] mb-6 border border-on-tertiary-container/30">FOR VENDORS &amp; PARTNERS</span>
+<h1 class="font-section-title text-[40px] md:text-[56px] font-extrabold leading-[1.1] mb-5">Check Your Payment</h1>
+<p class="text-on-primary/80 text-lg md:text-xl max-w-[680px]">See when Fortitude Fabrics paid you, how much and by which mode. Use the Payment ID we shared with you, or your name exactly as registered with us.</p>
+</div>
+</section>
+
+<!-- Search card -->
+<section class="pb-section-gap-desktop">
+<div class="max-w-[1040px] mx-auto px-margin-mobile -mt-16">
+<div class="bg-pure-white rounded-3xl shadow-xl border border-outline-variant/40 p-6 md:p-10">
+<form id="payCheckForm" class="flex flex-col sm:flex-row gap-3" novalidate autocomplete="off">
+<label for="payCheckInput" class="sr-only">Payment ID or name</label>
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-5 top-1/2 -translate-y-1/2 text-slate-muted">receipt_long</span>
+<input id="payCheckInput" type="text" maxlength="120" placeholder="e.g. PAY-20261006-0001 or ABC Traders" class="w-full bg-surface-container border-none rounded-full py-4 pl-14 pr-6 text-primary focus:ring-2 focus:ring-primary">
+</div>
+<button id="payCheckBtn" type="submit" class="bg-primary text-on-primary px-10 py-4 rounded-full font-label-caps text-label-caps hover:scale-[1.02] active:scale-[0.98] transition-all shadow-md flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[20px]">search</span> Check Payment
+</button>
+</form>
+<p class="text-[13px] text-slate-muted mt-3 pl-2">Exact matches only, so nobody can browse other payments.</p>
+<div id="payCheckResult" class="mt-6" aria-live="polite"></div>
+</div>
+
+<!-- Help tiles -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
+<div class="bg-surface-container rounded-2xl p-6">
+<span class="material-symbols-outlined text-3xl text-on-tertiary-container">confirmation_number</span>
+<h3 class="font-bold text-primary text-lg mt-3 mb-1">Have a Payment ID?</h3>
+<p class="text-slate-muted text-sm">It looks like PAY-20261006-0001 and shows that one payment.</p>
+</div>
+<div class="bg-surface-container rounded-2xl p-6">
+<span class="material-symbols-outlined text-3xl text-on-tertiary-container">badge</span>
+<h3 class="font-bold text-primary text-lg mt-3 mb-1">Search by name</h3>
+<p class="text-slate-muted text-sm">Type your full name or company name exactly as given to us to see all your payments and the total.</p>
+</div>
+<div class="bg-surface-container rounded-2xl p-6">
+<span class="material-symbols-outlined text-3xl text-on-tertiary-container">support_agent</span>
+<h3 class="font-bold text-primary text-lg mt-3 mb-1">Can't find it?</h3>
+<p class="text-slate-muted text-sm">Call <a class="font-bold text-primary hover:underline" href="tel:+919490255858">+91 94902 55858</a> or <a class="font-bold text-primary hover:underline" href="contact_us.html">contact us</a> and we'll check for you.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+
+<footer class="bg-primary py-section-gap-desktop border-t border-primary-container">
+<div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="flex flex-col lg:flex-row justify-between gap-12 lg:gap-20 mb-16">
+<!-- Brand Column -->
+<div class="space-y-6 lg:w-2/5">
+<a href="home.html" style="cursor:pointer;display:inline-block"><span class="font-section-title text-4xl font-extrabold text-on-primary tracking-tight">Fortitude Fabrics</span></a>
+<p class="font-body-small text-on-primary/70 leading-relaxed">Precision-engineered technical textiles for India's high-growth industrial sectors. Manufactured in Telangana, serving the world.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center hover:bg-on-tertiary-container transition-colors" href="#"><span class="material-symbols-outlined text-on-primary">hub</span></a>
+<a class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center hover:bg-on-tertiary-container transition-colors" href="#"><span class="material-symbols-outlined text-on-primary">group</span></a>
+</div>
+</div>
+<!-- Resources -->
+<div class="flex flex-col gap-4 lg:w-1/5">
+<h4 class="font-label-caps text-on-tertiary-container mb-4">RESOURCES</h4>
+<a class="font-body-small text-on-primary opacity-70 hover:opacity-100 hover:translate-x-1 transition-all" href="home.html">Home</a>
+<a class="font-body-small text-on-primary opacity-70 hover:opacity-100 hover:translate-x-1 transition-all" href="product_page.html">Products</a>
+<a class="font-body-small text-on-primary opacity-70 hover:opacity-100 hover:translate-x-1 transition-all" href="about_us.html">About Us</a>
+<a class="font-body-small text-on-primary opacity-70 hover:opacity-100 hover:translate-x-1 transition-all" href="contact_us.html">Contact Us</a>
+<a class="font-body-small text-on-primary opacity-70 hover:opacity-100 hover:translate-x-1 transition-all" href="blog.html">Blog Posts</a>
+</div>
+
+<!-- Contact -->
+<div class="flex flex-col gap-4 lg:w-2/5">
+<h4 class="font-label-caps text-on-tertiary-container mb-4">CONTACT</h4>
+<div class="space-y-4">
+<div class="flex items-start gap-2"><span class="material-symbols-outlined text-on-primary/70 text-sm mt-1">call</span><div><a href="tel:+919490255858" class="font-body-small text-on-primary opacity-70 hover:opacity-100 transition-opacity block">+91 94902 55858</a><p class="text-[12px] text-on-primary/50">Mon–Fri: 8:00 AM – 8:00 PM | Sat: 9:00 AM – 7:00 PM</p></div></div>
+<div class="flex items-start gap-2"><span class="material-symbols-outlined text-on-primary/70 text-sm mt-1">mail</span><div><a href="mailto:business@fortitudefabric.com" class="font-body-small text-on-primary opacity-70 hover:opacity-100 transition-opacity">business@fortitudefabric.com</a></div></div>
+<div class="flex items-start gap-2"><span class="material-symbols-outlined text-on-primary/70 text-sm mt-1">location_on</span><div><p class="font-body-small text-on-primary opacity-70">Wyra, Khammam, Telangana, India</p></div></div>
+<div class="flex items-start gap-2"><span class="material-symbols-outlined text-on-primary/70 text-sm mt-1">language</span><a href="https://www.fortitudefabric.com" target="_blank" rel="noopener noreferrer" class="font-body-small text-on-primary opacity-70 hover:opacity-100 transition-opacity">www.fortitudefabric.com</a></div>
+</div>
+</div>
+</div>
+<div class="pt-8 border-t border-primary-container flex flex-col md:flex-row justify-between items-center gap-6">
+<p class="text-on-primary/50 text-[14px]">© 2024 Fortitude Fabrics. All rights reserved. Precision Manufacturing.</p>
+
+</div>
+</div>
+</footer>
+<script>
+    // Navigation Toggle Logic
+    const productsBtn = document.getElementById('products-btn');
+    const industriesBtn = document.getElementById('industries-btn');
+    const productsMenu = document.getElementById('products-menu');
+    const industriesMenu = document.getElementById('industries-menu');
+    const topNav = document.getElementById('top-nav');
+
+    function closeAllMenus() {
+        productsMenu.classList.remove('active');
+        industriesMenu.classList.remove('active');
+    }
+
+    if (productsBtn) {
+        productsBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isActive = productsMenu.classList.contains('active');
+            closeAllMenus();
+            if (!isActive) {
+                productsMenu.classList.add('active');
+            }
+        });
+    }
+
+    if (industriesBtn) {
+        industriesBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isActive = industriesMenu.classList.contains('active');
+            closeAllMenus();
+            if (!isActive) {
+                industriesMenu.classList.add('active');
+            }
+        });
+    }
+
+    document.addEventListener('click', (e) => {
+        if (!productsMenu.contains(e.target) && !industriesMenu.contains(e.target)) {
+            closeAllMenus();
+        }
+    });
+
+    // Header scroll transparency effect (optional refined look)
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            topNav.classList.add('shadow-md');
+        } else {
+            topNav.classList.remove('shadow-md');
+        }
+    });
+
+    // Mobile Menu Toggle Logic
+    document.addEventListener("DOMContentLoaded", () => {
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const line1 = document.getElementById('hamburger-line-1');
+        const line2 = document.getElementById('hamburger-line-2');
+        const line3 = document.getElementById('hamburger-line-3');
+
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                const isExpanded = !mobileMenu.classList.contains('translate-x-full');
+                if (isExpanded) {
+                    // Close
+                    mobileMenu.classList.add('translate-x-full');
+                    line1.classList.remove('rotate-45', 'translate-y-2');
+                    line2.classList.remove('opacity-0');
+                    line3.classList.remove('-rotate-45', '-translate-y-2');
+                    document.body.style.overflow = '';
+                } else {
+                    // Open
+                    mobileMenu.classList.remove('translate-x-full');
+                    line1.classList.add('rotate-45', 'translate-y-2');
+                    line2.classList.add('opacity-0');
+                    line3.classList.add('-rotate-45', '-translate-y-2');
+                    document.body.style.overflow = 'hidden'; // prevent background scrolling
+                }
+            });
+        }
+    });
+</script>
+
+
+
+
+
+
+
+
+
+<!-- Mobile Menu Overlay -->
+<div id="mobile-menu" class="fixed inset-0 bg-pure-white z-40 transform translate-x-full transition-transform duration-300 pt-[88px] px-margin-mobile overflow-y-auto pb-10">
+    <nav class="flex flex-col gap-6 pt-10">
+        <a href="home.html" class="font-section-title text-2xl text-primary border-b border-outline-variant/30 pb-4">Home</a>
+        <a href="product_page.html" class="font-section-title text-2xl text-primary border-b border-outline-variant/30 pb-4">Products</a>
+        <a href="blog.html" class="font-section-title text-2xl text-primary border-b border-outline-variant/30 pb-4">Blog</a>
+        <a href="about_us.html" class="font-section-title text-2xl text-primary border-b border-outline-variant/30 pb-4">About Us</a>
+        <a href="contact_us.html" class="font-section-title text-2xl text-primary border-b border-outline-variant/30 pb-4">Contact Us</a>
+        <a href="check_payment.html" class="font-section-title text-2xl text-primary border-b border-outline-variant/30 pb-4">Check Payment</a>
+        <button onclick="window.location.href='contact_us.html#request-quote'" class="mt-8 bg-primary text-on-primary px-8 py-4 rounded-full font-label-caps text-label-caps shadow-md w-full active:scale-95 transition-all">Request a Quote</button>
+    </nav>
+</div>
+
+<script src="payments/js/common.js"></script>
+<script src="payments/js/check-payment.js"></script>
+</body></html>
